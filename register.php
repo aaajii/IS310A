@@ -7,7 +7,7 @@
   <link rel="stylesheet" type="text/css" href="logindesign.css">
 </head>
 
-<body style="background: linear-gradient(#29596b, white);">
+<body style="background: linear-gradient(#29596b, white);font: normal 14px/normal 'basic', Helvetica, sans-serif;">
   
   <form id="forms" >
     <table align="center">
