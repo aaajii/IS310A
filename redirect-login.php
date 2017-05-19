@@ -4,17 +4,15 @@
 <title>
 User Validating!
 </title>
-<style>
-#statement{
-	padding: 25%;
-}
-</style>
 </head>
 
 <body>
 </body>
 </html>
 <?php
+echo $_COOKIE['name'];
+if(!isset($_COOKIE['name']))
+{
 	include ('config.php');
 	if(isset($_POST['passUsername']) && isset($_POST['passPassword']))
 	{
@@ -33,17 +31,16 @@ User Validating!
 		{
 			if($verify['status'] == 0)
 			{
-				echo "<p id='statement'> Your account has not yet been confirmed by the admin. Please try again later. </p>";
+				echo "<p id='statement'> Your account has not yet been confirmed by the admin. Please try again later. Redirecting you to the log-in page now </p>";
 				header("Refresh:3;url=login.php");
 			}else if($verify['status'] == 2)
 			{
-				echo "<p id='statement'> Admin mode activated! Redirecting in 3 seconds</p>";
-				header("Refresh:3;url=adminpage.php");
+				setcookie('name',$username,time()+1800,'/');
+				header("Location: adminpage.php");
 			}
 			else{
 				setcookie('name',$username,time()+1800,'/');
-			echo "</br></br></br></br></br></br></br><h1><center>welcome ". $verify['firstname']. "!, Redirecting to home page in 3 seconds</center></h1>";
-			header("Refresh:3;url=home.php");
+				header("Location: home.php");
 			}
 		}
 	else
@@ -56,4 +53,5 @@ User Validating!
 		
 		
 	}
+}else{header("Location:home.php");}
 ?>
