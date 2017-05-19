@@ -35,7 +35,7 @@ input
   text-overflow: ellipsis;
   text-shadow: 2px 2px 2px rgba(0,0,0,0.5) ;
 }
-.enjoy-css {
+.button-css {
   display: inline-block;
   -webkit-box-sizing: content-box;
   -moz-box-sizing: content-box;
@@ -68,7 +68,7 @@ input
   border-bottom: 1px solid #5b38c4;
   -webkit-border-radius: 3px;
   border-radius: 3px;
-  font: normal 16px/normal "Times New Roman", Times, serif;
+  font: normal 14px/normal "basic", Helvetica, sans-serif;
   color: rgba(0,142,198,1);
   -o-text-overflow: clip;
   text-overflow: clip;

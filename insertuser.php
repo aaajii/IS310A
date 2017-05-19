@@ -2,24 +2,6 @@
 <head>
 <title>
 </title>
-<style>
-p
-{
-	color:white;
-}
-html
-{
-	background-color:#00BFFF;
-}
-input
-{
-	color:blue;
-}
-select
-{
-	color:blue;
-}
-</style>
 </head>
 <body>
 </body>

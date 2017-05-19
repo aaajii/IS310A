@@ -10,7 +10,6 @@ User Validating!
 </body>
 </html>
 <?php
-echo $_COOKIE['name'];
 if(!isset($_COOKIE['name']))
 {
 	include ('config.php');
