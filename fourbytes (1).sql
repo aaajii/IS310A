@@ -63,7 +63,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `userID` int(255) NOT NULL AUTO_INCREMENT,
   `firstname` varchar(255) NOT NULL,
   `lastname` varchar(255) NOT NULL,
-  `contact` int(45) NOT NULL,
+  `contact` int(255) NOT NULL,
   `email` varchar(255) NOT NULL COMMENT 'still required',
   `username` varchar(255) NOT NULL COMMENT 'username to make log-in easier',
   `password` varchar(255) NOT NULL,
