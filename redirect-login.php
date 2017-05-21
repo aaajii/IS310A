@@ -34,11 +34,11 @@ if(!isset($_COOKIE['name']))
 				header("Refresh:3;url=login.php");
 			}else if($verify['status'] == 2)
 			{
-				setcookie('name',$username,time()+1800,'/');
+				setcookie('name',$verify['firstname'],time()+86400,'/');
 				header("Location: adminpage.php");
 			}
 			else{
-				setcookie('name',$username,time()+1800,'/');
+				setcookie('name',$verify['firstname'],time()+86400,'/');
 				header("Location: home.php");
 			}
 		}

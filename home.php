@@ -48,7 +48,7 @@ Welcome to Our Home Page!
 </br>
 <center><button class="button button2"><a href = "http://localhost:8080/php-shopping-cart-master/" style ="color:white;">Buy here</a></button></center>
 
-<center><button class="button button2"><a href = "sellform.php" style ="color:white;">Sell here</a></button></center>
+<center><button class="button button2"><a href = "sellform.html" style ="color:white;">Sell here</a></button></center>
 
 <form name = "myForm" method="post" action="<?php $_SERVER['PHP_SELF']?>">
 <center>
@@ -65,7 +65,7 @@ Welcome to Our Home Page!
 if(isset($_POST['Lout']))
 {
 	$a = $_POST['Pout'];
-	setcookie('name','wew',time()-1800,'/');
+	setcookie('name','wew',time()-86400,'/');
 	header("Location: login.php");
 }
 ?>
