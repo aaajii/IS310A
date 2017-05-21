@@ -6,7 +6,7 @@
 		isset($_POST['image'])
 	  )
 	{
-		include 'C:\Users\Lemons\Desktop\USBWebserver v8.6\root\IS310A\config.phpconfig.php';
+		include 'C:\Users\Lemons\Desktop\USBWebserver v8.6\root\IS310A\config.php';
 		$name = $_POST['name'];
 		$desc = $_POST['dsc']; 
 		$prce = $_POST['price'];
@@ -44,7 +44,7 @@
 			header ("Refresh: 2; url: home.php");
 			
 		}else{echo("Dude, there r bugs: ".mysqli_error($conn));}
-		
+		mysqli_close($conn);
 	}
 	else 
 	{
