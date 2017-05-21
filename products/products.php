@@ -9,7 +9,7 @@
 <h2>Product list</h2>
 <h4>Browse items here</h4>
 <?php
-	include 'C:\Users\Lemons\Desktop\USBWebserver v8.6\root\IS310A\config.php';
+	include 'config.php';
 	
 	$test = " SELECT * 
 			  FROM  `products`
@@ -25,25 +25,31 @@
 	while($result = $execute -> fetch_assoc())
 	{
 		$description = $result['itemDescription'];
+		$newDesc = "";
 		if (strlen($description) > 50)
 		{
 			for ($i = 0; $i < 50; $i++)
 			{
-				$description .= $description[$i];
+				$newDesc .= $description[$i];
 			}
-			$description .= "...";
+			$newDesc .= "...";
+		}else
+		{
+			$newDesc = $description;
 		}
 		
-		echo " <div class='responsive'>
-				  <div class='product'>
-					<a href='productdetails.php?id=".$result['itemID']."'>
-					  <img src='".$result['itemImage']."' alt='".$result['itemName']."' style='width:300px;height:200px;'>
-					</a>
+		echo " <div class='responsive' style='width: 30%;background-image: url('".$result['itemImage']."'); background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;'>
+				  <a href='productdetails.php?id=".$result['itemID']."'><div class='product' >
+					<center>
+					  <!--<img src='".$result['itemImage']."' alt='".$result['itemName']."' style='width: 300px;height: 500px;object-fit: cover;'-->
+					</center>
 					
 					<div class='desc'><b>".$result['itemName']."</b> <br/>
-									  ".$description."
+									  ".$newDesc."
 					</div>
-				  </div>
+				  </div></a>
 				</div>";
 	}
 ?>

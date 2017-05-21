@@ -12,7 +12,7 @@ User Validating!
 <?php
 if(!isset($_COOKIE['email']))
 {
-	include ('C:\Users\Lemons\Desktop\USBWebserver v8.6\root\IS310A\config.php');
+	include ('config.php');
 	if(isset($_POST['passUsername']) && isset($_POST['passPassword']))
 	{
 		$username = $_POST['passUsername'];

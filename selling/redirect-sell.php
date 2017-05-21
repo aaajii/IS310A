@@ -6,7 +6,7 @@
 		isset($_POST['image'])
 	  )
 	{
-		include 'C:\Users\Lemons\Desktop\USBWebserver v8.6\root\IS310A\config.php';
+		include 'config.php';
 		$name = $_POST['name'];
 		$desc = $_POST['dsc']; 
 		$prce = $_POST['price'];

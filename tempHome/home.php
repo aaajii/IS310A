@@ -46,7 +46,7 @@ Welcome to Our Home Page!
 </br>
 </br>
 </br>
-<center><button class="button button2"><a href = "http://localhost:8080/php-shopping-cart-master/" style ="color:white;">Buy here</a></button></center>
+<center><button class="button button2"><a href = "/IS310A/products/products.php" style ="color:white;">Buy here</a></button></center>
 
 <center><button class="button button2"><a href = "/IS310A/selling/sellform.html" style ="color:white;">Sell here</a></button></center>
 
