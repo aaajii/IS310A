@@ -10,7 +10,7 @@ User Validating!
 </body>
 </html>
 <?php
-if(!isset($_COOKIE['name']))
+if(!isset($_COOKIE['email']))
 {
 	include ('config.php');
 	if(isset($_POST['passUsername']) && isset($_POST['passPassword']))
@@ -34,11 +34,11 @@ if(!isset($_COOKIE['name']))
 				header("Refresh:3;url=login.php");
 			}else if($verify['status'] == 2)
 			{
-				setcookie('name',$verify['firstname'],time()+86400,'/');
+				setcookie('email',$verify['email'],time()+86400,'/');
 				header("Location: adminpage.php");
 			}
 			else{
-				setcookie('name',$verify['firstname'],time()+86400,'/');
+				setcookie('email',$verify['email'],time()+86400,'/');
 				header("Location: home.php");
 			}
 		}

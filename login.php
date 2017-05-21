@@ -21,6 +21,7 @@
 
   <?php 
 include ('config.php');
+echo $_COOKIE['email'];
 if(!isset($_COOKIE['email']))
 {
 ?>
