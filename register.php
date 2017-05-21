@@ -145,6 +145,7 @@
     <input type="hidden" name="pGender" id="pGender">
     <input type="hidden" name="pAdmin" id="pAdmin">
   </form>
+  
   <script>
     function validateRegistration() {
       var firstName = document.myForm.vFirst.value;

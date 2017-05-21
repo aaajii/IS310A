@@ -40,14 +40,14 @@ if(!isset($_COOKIE['name']))
           <td>
             <p>Email:</p>
           </td>
-          <td><input class="txt-css" type="text" name="userName" value="" id="userName"></td>
+          <td><input class="txt-css" type="text" id="userName" value=""></td>
         </tr>
 
         <tr>
           <td>
             <p>Password:</p>
           </td>
-          <td><input class="txt-css" type="password" name="passWord" value="" id="passWord"></td>
+          <td><input class="txt-css" type="password" id="passWord" value=""></td>
         </tr>
 
         <tr>
