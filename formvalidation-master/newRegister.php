@@ -12,6 +12,14 @@
 			<div id="name_error" class="val_error"></div>
 		</div>
 		<div>
+			<input type="text" name="first" class="textInput" placeholder="First Name">
+			<div id="first_error" class="val_error"></div>
+		</div>
+		<div>
+			<input type="text" name="last" class="textInput" placeholder="Last Name">
+			<div id="last_error" class="val_error"></div>
+		</div>
+		<div>
 			<input type="email" name="email" class="textInput" placeholder="Email">
 			<div id="email_error" class="val_error"></div>
 		</div>
@@ -21,6 +29,18 @@
 		<div>
 			<input type="password" name="password_confirmation" class="textInput" placeholder="password confirmation">
 			<div id="password_error" class="val_error"></div>
+		</div>
+		<div>
+			<input type="text" name="contact" class="textInput" placeholder="09XX-XX-XXXX">
+			<div id="contact_error" class="val_error"></div>
+		</div>
+		<div>
+			<select name="gender" class="textInput">
+			<option value="Male">Male</option>
+			<option value="Female">Female</option>
+			<option value="Other">Rather not tell 🌈 </option>
+			</select>
+			<div id="first_error" class="val_error"></div>
 		</div>
 		<div>
 			<input type="submit" class="btn" name="register" value="Register">

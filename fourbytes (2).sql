@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: May 18, 2017 at 01:07 PM
+-- Generation Time: May 21, 2017 at 07:06 AM
 -- Server version: 5.6.13
 -- PHP Version: 5.4.17
 
@@ -37,9 +37,19 @@ CREATE TABLE IF NOT EXISTS `products` (
   `userID` int(255) NOT NULL COMMENT 'References to users table',
   `allowed` int(1) NOT NULL COMMENT '0-no ; 1-yes;',
   `itemImage` varchar(255) DEFAULT NULL,
-  `price` int(255) NOT NULL,
+  `dateAdded` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`itemID`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=11 ;
+
+--
+-- Dumping data for table `products`
+--
+
+INSERT INTO `products` (`itemID`, `itemName`, `itemDescription`, `itemPrice`, `itemBrand`, `userID`, `allowed`, `itemImage`, `dateAdded`) VALUES
+(7, 'Buster Sword', 'a HUGE SWORD ;)))', 822, 'MHFU', 2, 0, 'https://vignette2.wikia.nocookie.net/monsterhunter/images/e/ec/1stGen_and_2ndGen-Great_Sword_Render_009.png/revision/latest/scale-to-width-down/66?cb=20120512064435', '2017-05-21 05:46:00'),
+(8, 'White Serpent Blade', 'Beautiful Great Sword made from white Giaprey scales. Lined with gold fangs.', 384, 'MHFU', 2, 0, 'https://vignette3.wikia.nocookie.net/monsterhunter/images/c/cf/2ndGen-Great_Sword_Render_014.png/revision/latest/scale-to-width-down/64?cb=20120512092913', '0000-00-00 00:00:00'),
+(9, 'Ravager Blade', 'Iron Great Sword with a vicious serrated edge. Can be further improved.', 576, 'MHFU', 2, 0, 'https://vignette3.wikia.nocookie.net/monsterhunter/images/b/b6/1stGen_and_2ndGen-Great_Sword_Render_005.png/revision/latest/scale-to-width-down/80?cb=20120512064402', '0000-00-00 00:00:00'),
+(10, 'Khezu Shock Sword', 'Made of Khezu. Wrapped in attribute material with an electrified blade.', 624, 'MHFU', 2, 0, 'https://vignette4.wikia.nocookie.net/monsterhunter/images/1/1b/1stGen_and_2ndGen-Great_Sword_Render_036.png/revision/latest/scale-to-width-down/60?cb=20120512093241', '2017-05-21 07:02:46');
 
 -- --------------------------------------------------------
 
@@ -63,13 +73,20 @@ CREATE TABLE IF NOT EXISTS `users` (
   `userID` int(255) NOT NULL AUTO_INCREMENT,
   `firstname` varchar(255) NOT NULL,
   `lastname` varchar(255) NOT NULL,
-  `contact` int(255) NOT NULL,
+  `contact` varchar(45) NOT NULL,
   `email` varchar(255) NOT NULL COMMENT 'still required',
   `username` varchar(255) NOT NULL COMMENT 'username to make log-in easier',
   `password` varchar(255) NOT NULL,
   `status` int(45) NOT NULL,
   PRIMARY KEY (`userID`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='This is the table containing all of the user data' AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='This is the table containing all of the user data' AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`userID`, `firstname`, `lastname`, `contact`, `email`, `username`, `password`, `status`) VALUES
+(2, 'Jimuel', 'Banawan', '09430151214', 'jwpbanawan@addu.edu.ph', 'root', 'p4$$w0rD', 1);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
