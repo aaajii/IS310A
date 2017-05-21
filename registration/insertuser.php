@@ -7,7 +7,7 @@
 </body>
 </html>
 <?php
-	include ('config.php');
+	include ('C:\Users\Lemons\Desktop\USBWebserver v8.6\root\IS310A\config.php');
 		if(isset($_POST['pFirst'])
 		&& isset($_POST['pLast'])
 		&& isset($_POST['pEmail'])

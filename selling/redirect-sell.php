@@ -6,7 +6,7 @@
 		isset($_POST['image'])
 	  )
 	{
-		include 'config.php';
+		include 'C:\Users\Lemons\Desktop\USBWebserver v8.6\root\IS310A\config.phpconfig.php';
 		$name = $_POST['name'];
 		$desc = $_POST['dsc']; 
 		$prce = $_POST['price'];
@@ -31,7 +31,6 @@
 		
 		
 		//Now lets fucking insert that product into the sexy database baby
-		include 'config.php';
 		$quer = "INSERT INTO `products` 
 				 (`itemName`, `itemDescription`, `itemPrice`, `itemBrand`, `userID`, `allowed`, `itemImage`) 
 				 VALUES 
@@ -44,7 +43,7 @@
 					note** <b> it must be confirmed by the admin before being posted </b>";
 			header ("Refresh: 2; url: home.php");
 			
-		}else{echo("Fuck you man, there r bugs: ".mysqli_error($conn));}
+		}else{echo("Dude, there r bugs: ".mysqli_error($conn));}
 		
 	}
 	else 

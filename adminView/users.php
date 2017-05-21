@@ -7,7 +7,7 @@
 </head>
 <h3> Pending confirmation from you: </h3>
 <?php
-	include "config.php";
+	include "C:\Users\Lemons\Desktop\USBWebserver v8.6\root\IS310A\config.php";
 	
 	
 ?>

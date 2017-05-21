@@ -17,10 +17,9 @@
   <link rel="stylesheet" type="text/css" href="logindesign.css">
 </head>
 
-<body style="background-image: url('images/skyline-buildings-new-york-skyscrapers.jpg');background-repeat: no-repeat;background-attachment: fixed;">
+<body style="background-image: url('/IS310A/images/skyline-buildings-new-york-skyscrapers.jpg');background-repeat: no-repeat;background-attachment: fixed;">
 
   <?php 
-echo $_COOKIE['email'];
 if(!isset($_COOKIE['email']))
 {
 ?>

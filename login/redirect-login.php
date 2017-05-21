@@ -12,7 +12,7 @@ User Validating!
 <?php
 if(!isset($_COOKIE['email']))
 {
-	include ('config.php');
+	include ('C:\Users\Lemons\Desktop\USBWebserver v8.6\root\IS310A\config.php');
 	if(isset($_POST['passUsername']) && isset($_POST['passPassword']))
 	{
 		$username = $_POST['passUsername'];
@@ -35,11 +35,11 @@ if(!isset($_COOKIE['email']))
 			}else if($verify['status'] == 2)
 			{
 				setcookie('email',$verify['email'],time()+86400,'/');
-				header("Location: adminpage.php");
+				header("Location: /IS310A/adminView/adminpage.php");
 			}
 			else{
 				setcookie('email',$verify['email'],time()+86400,'/');
-				header("Location: home.php");
+				header("Location: /IS310A/tempHome/home.php");
 			}
 		}
 	else
