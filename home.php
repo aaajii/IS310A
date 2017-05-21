@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <?php
-if(isset($_COOKIE['name']))
+if(isset($_COOKIE['email']))
 {
 	?>
 <html>

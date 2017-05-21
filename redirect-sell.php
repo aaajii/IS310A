@@ -14,18 +14,19 @@
 		$image = $_POST['image'];
 		
 		// Wait let me get the fucking ID of the current user ehehehe
-		$user = $_COOKIE['name'];
+		$user = $_COOKIE['email'];
 		
 		$IDquer = " SELECT userID 
 					FROM  `users`
-					WHERE  `firstname` LIKE '$user';";
+					WHERE  `email` LIKE '$user';";
 		$IDresult = $conn -> query($IDquer);
+		
 		//Let me check if there are errors ahehe
 		if (!mysqli_query($conn,$IDquer))
 		{
 		  echo("Error description: " . mysqli_error($conn));
 		}
-		mysqli_close($conn);
+		$result = $$IDresult -> fetch_assoc();
 		//Okay let's continue
 		
 		
@@ -36,7 +37,6 @@
 				 VALUES 
 				 ('$name','$desc',$prce,'$brnd','$IDresult',0,'$image');";
 		$execute = $conn -> query($quer);
-		$result = $execute -> fetch_assoc();
 		//Hell yeah! Lets check if dat shit inserted. Dank memes bruh ehehehe
 		if ($execute == true)
 		{
