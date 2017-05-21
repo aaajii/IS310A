@@ -26,7 +26,7 @@
 		{
 		  echo("Error description: " . mysqli_error($conn));
 		}
-		$result = $$IDresult -> fetch_assoc();
+		$result = $IDresult -> fetch_assoc();
 		//Okay let's continue
 		
 		
@@ -35,7 +35,7 @@
 		$quer = "INSERT INTO `products` 
 				 (`itemName`, `itemDescription`, `itemPrice`, `itemBrand`, `userID`, `allowed`, `itemImage`) 
 				 VALUES 
-				 ('$name','$desc',$prce,'$brnd','$IDresult',0,'$image');";
+				 ('$name','$desc',$prce,'$brnd','".$result['userID']."',0,'$image');";
 		$execute = $conn -> query($quer);
 		//Hell yeah! Lets check if dat shit inserted. Dank memes bruh ehehehe
 		if ($execute == true)
