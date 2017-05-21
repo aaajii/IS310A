@@ -49,11 +49,6 @@
 	}
 	else 
 	{
-		echo "".$_POST['name'].
-		$_POST['dsc']
-		.$_POST['price']
-		.$_POST['brand']
-		.$_POST['image'];
-		//header("Location: sellform.html");
+		header("Location: sellform.html");
 	}
 ?>
