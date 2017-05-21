@@ -38,18 +38,17 @@
 			$newDesc = $description;
 		}
 		
-		echo " <div class='responsive' style='width: 30%;background-image: url('".$result['itemImage']."'); background-size: cover;
-    background-repeat: no-repeat;
-    background-position: 50% 50%;'>
-				  <a href='productdetails.php?id=".$result['itemID']."'><div class='product' >
-					<center>
-					  <!--<img src='".$result['itemImage']."' alt='".$result['itemName']."' style='width: 300px;height: 500px;object-fit: cover;'-->
-					</center>
+		echo " <div class='responsive'>
+				  <div class='product'>
+					<center><a href='productdetails.php?id=".$result['itemID']."'>
+					  <img src='".$result['itemImage']."' alt='".$result['itemName']."' style='width:30%;height:auto;'>
+					</a>
+					<p><span><b> Price: </b>".$result['itemPrice']." </span></p></center>
 					
 					<div class='desc'><b>".$result['itemName']."</b> <br/>
 									  ".$newDesc."
 					</div>
-				  </div></a>
+				  </div>
 				</div>";
 	}
 ?>
