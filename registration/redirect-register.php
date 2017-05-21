@@ -45,5 +45,5 @@
 
 </html>
 <?php
-	header("Refresh: 3; url=login.php");
+	header("Refresh: 3; url=/IS310A/login/login.php");
 ?>
