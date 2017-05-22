@@ -52,5 +52,5 @@ if(!isset($_COOKIE['email']))
 		
 		
 	}
-}else{header("Location:home.php");}
+}else{header("Location:/IS310A/tempHome/home.php");}
 ?>
