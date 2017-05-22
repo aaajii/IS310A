@@ -34,14 +34,19 @@
 		{
 			
 			$result = $conn -> query("INSERT into users(firstname,lastname,contact,email,username,password,status) 
-			values('$firstName','$lastName',,'$numBer','$emailAddress','dummyacc','$passWord','$adMin');");
-		  echo("Error description: " . mysqli_error($conn));
+			values('$firstName','$lastName','$numBer','$emailAddress','dummyacc','$passWord','$adMin');");
+			
+			if (!mysqli_query($conn,"INSERT into users(firstname,lastname,contact,email,username,password,status) 
+			values('$firstName','$lastName','$numBer','$emailAddress','dummyacc','$passWord','$adMin');"))
+			  {
+			  echo("Error description: " . mysqli_error($conn));
+			  }
 		  
 			if($result == TRUE)
 			{
 				echo "got here";
 				echo "</br></br></br></br></br></br></br></br></br></br><center><h1>Registration Successful, Redirecting in 3 seconds</h1></center>";
-				header("Refresh:3;url=regredirect.php");
+				header("Refresh:3;url=redirect-register.php");
 			}
 		}
 		else if($count1 > 0)
