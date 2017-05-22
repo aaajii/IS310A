@@ -9,7 +9,7 @@
 
 <body style="background: linear-gradient(#29596b, white);font: normal 14px/normal 'basic', Helvetica, sans-serif;">
   
-  <form id="forms" >
+  <form name="myForm" id="forms" >
     <table align="center">
       <tr>
         <td>
@@ -134,8 +134,8 @@
       </td>
       </tr>
     </table>
-    <center> Already have an account? <a href="login.php"> Log-in here!</a> </center>
-  </form name="myForm2" action="" method="post">
+    <center> Already have an account? <a href="/IS310A/login/login.php"> Log-in here!</a> </center>
+  </form>
   <form name="myForm2" action="insertuser.php" method="post">
     <input type="hidden" name="pFirst" id="pFirst">
     <input type="hidden" name="pLast" id="pLast">

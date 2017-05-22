@@ -25,31 +25,38 @@
 		$adMin = $_POST['pAdmin'];
 			$result1 = $conn -> query("SELECT * FROM users WHERE email = '$emailAddress'");
 			$result2 = $conn -> query("SELECT * FROM users WHERE password = '$passWord'");
-			$verify1 = $result -> fetch_assoc();
-			$verify2 = $result -> fetch_assoc();
+			$verify1 = $result1 -> fetch_assoc();
+			$verify2 = $result2 -> fetch_assoc();
 			$count1 = count($verify1);
 			$count2 = count($verify2);
 			
-			if($count1 == 0 && $count2 == 0)
+		if($count1 == 0)
+		{
+			
+			$result = $conn -> query("INSERT into users(firstname,lastname,contact,email,username,password,status) 
+			values('$firstName','$lastName',,'$numBer','$emailAddress','dummyacc','$passWord','$adMin');");
+		  echo("Error description: " . mysqli_error($conn));
+		  
+			if($result == TRUE)
 			{
-		$result = $conn -> query("INSERT into users(first,last,email,pass,contact,gender,admin) 
-		values('$firstName','$lastName','$emailAddress','$passWord','$numBer','$genDer','$adMin');");
-	if($result == TRUE)
-	{
-		echo "</br></br></br></br></br></br></br></br></br></br><center><h1>Registration Successful, Redirecting in 3 seconds</h1></center>";
-		setcookie('name',$firstName,time()+1800,'/');
-		header("Refresh:3;url=regredirect.php");
-	}
+				echo "got here";
+				echo "</br></br></br></br></br></br></br></br></br></br><center><h1>Registration Successful, Redirecting in 3 seconds</h1></center>";
+				header("Refresh:3;url=regredirect.php");
 			}
+		}
 		else if($count1 > 0)
 		{
+			echo "got here";
 			echo "</br></br></br></br></br></br></br></br></br></br><center><h1>The Email is already taken!</h1></center>";
 			header("Refresh:3;url=register.php");
 		}
 		else
-	{
-		echo "</br></br></br></br></br></br></br></br></br></br><center><h1>The Email is already taken!</h1></center>";
-		header("Refresh:3;url=register.php");
+		{echo "got here2";
+			echo "</br></br></br></br></br></br></br></br></br></br><center><h1>The Email is already taken!</h1></center>";
+			header("Refresh:3;url=register.php");
+		}
 	}
+	else{
+	echo "error";
 	}
 ?>
