@@ -41,12 +41,13 @@ input[type=submit]
 </head>
 <body>
 <div class = "login">
-<h1 align = "center"> Login </h1>
+<h1 align = "center"> Welcome to 4bytes! </h1>
 <form action = "newLogin.php" method = "post" style = "text-align:center;">
-<input type = "text" placeholder = "Username" id = "user" name = "user"> <br/><br/>
-<input type = "password" placeholder = "Password" id = "password" name = "password"> <br/><br/> 
+<b>Username:</b> <input type = "text" placeholder = "Username" id = "user" name = "user"> <br/><br/>
+<b>Password:</b> <input type = "password" placeholder = "Password" id = "password" name = "password"> <br/><br/> 
 <input type = "submit" value = "Login" name = "submit">
 <?php
+include ("config.php");
 include ('loginserver.php');
 ?>	
 </body>

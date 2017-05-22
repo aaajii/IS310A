@@ -6,7 +6,7 @@ if(isset($_POST['submit']))
 			$user = $_POST['user'];
 			$password = $_POST['password'];
 			include('config.php');
-			$result1 = $conn -> query("SELECT * FROM users WHERE username = '$user';");
+			$result1 = $conn -> query("SELECT * FROM users WHERE email = '$user';");
 			$result2 = $conn -> query("SELECT * FROM users WHERE  pass = '$password';");
 			$verify1 = $result1 -> fetch_assoc();
 			$verify2 = $result2 -> fetch_assoc();
@@ -15,9 +15,9 @@ if(isset($_POST['submit']))
 			if($count1 > 0 && $count2 > 0)
 			{
 				echo "Login Successful!, Redirecting in 3 seconds";
-				header("Refresh;3:url=newLogin.php");
+				header("Refresh;3:url=newRediretingRegistration.php");
 			}
-		 if(empty($_POST['user']) || empty($_POST['password']))
+		 else if(empty($_POST['user']) || empty($_POST['password']))
 		{
 			echo "Your email or password is empty";
 			header("Refresh;1:url = newLogin.php");
@@ -25,12 +25,12 @@ if(isset($_POST['submit']))
 		else if($count1 == 0)
 		{
 			echo " The Email is incorrect";
-			header("Refresh;3:url=newLogin.php");
+			header("Refresh;1:url=newLogin.php");
 		}
 	    else if($count2 == 0)
 		{
-			echo " and the Password is incorrect";
-			header("Refresh;3:url=newLogin.php");
+			echo "The Password is incorrect";
+			header("Refresh;1:url=newLogin.php");
 		}
 		}
 }
