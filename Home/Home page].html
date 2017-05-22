@@ -117,7 +117,7 @@ function validation()
 	if(isset($_POST['Pout']))
 	{
 		$a = $_POST['Pout'];
-		setcookie('name',$a,time()-1800,'/');
+		setcookie('username',$a,time()-1800,'/');
 		header("Location:login.php");
 	}
 	else

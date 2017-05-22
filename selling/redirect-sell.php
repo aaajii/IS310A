@@ -14,11 +14,11 @@
 		$image = $_POST['image'];
 		
 		// Wait let me get the fucking ID of the current user ehehehe
-		$user = $_COOKIE['email'];
+		$user = $_COOKIE['username'];
 		
 		$IDquer = " SELECT userID 
 					FROM  `users`
-					WHERE  `email` LIKE '$user';";
+					WHERE  `username` LIKE '$user';";
 		$IDresult = $conn -> query($IDquer);
 		
 		//Let me check if there are errors ahehe
@@ -32,9 +32,9 @@
 		
 		//Now lets fucking insert that product into the sexy database baby
 		$quer = "INSERT INTO `products` 
-				 (`itemName`, `itemDescription`, `itemPrice`, `itemBrand`, `userID`, `allowed`, `itemImage`) 
+				 (`itemName`, `itemDescription`, `itemPrice`, `itemBrand`, `userID`, `itemImage`) 
 				 VALUES 
-				 ('$name','$desc',$prce,'$brnd','".$result['userID']."',0,'$image');";
+				 ('$name','$desc',$prce,'$brnd','".$result['userID']."','$image');";
 		$execute = $conn -> query($quer);
 		//Hell yeah! Lets check if dat shit inserted. Dank memes bruh ehehehe
 		if ($execute == true)

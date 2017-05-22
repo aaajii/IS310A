@@ -19,10 +19,7 @@
 
 <body style="background-image: url('/IS310A/images/skyline-buildings-new-york-skyscrapers.jpg');background-repeat: no-repeat;background-attachment: fixed;">
 
-  <?php 
-if(!isset($_COOKIE['email']))
-{
-?>
+  
 
   <div class="header">
     <h1 class="headertext">Welcome to </br>4BYTES!</h1>
