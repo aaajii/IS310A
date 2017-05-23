@@ -119,18 +119,6 @@ INSERT INTO `users` (`userID`, `firstname`, `lastname`, `contact`, `email`, `use
 (3, 'Kristal', 'Uy', '09434810806', 'kkemtal@gmail.com', 'dummyacc', 'p4$$w0rD', 1),
 (6, 'LJ', 'Solis', '09434810806', 'lj@yahoo.com', 'dummyacc', 'p4$$w0rD', 1);
 
---
--- Triggers `users`
---
-DROP TRIGGER IF EXISTS `deleteUser`;
-DELIMITER //
-CREATE TRIGGER `deleteUser` AFTER DELETE ON `users`
- FOR EACH ROW INSERT INTO deletedUsers (userID, firstname, lastname, contact, email, username)
-VALUES
-(old.userID, old.firstname, old.lastname, old.contact, old.email, old.username)
-//
-DELIMITER ;
-
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
