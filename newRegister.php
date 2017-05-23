@@ -3,7 +3,7 @@
 <head>
 	<!-- sources https://www.youtube.com/watch?v=K1CzktZMXhY -->
 	<title>Form validation in Javascript</title>
-	<link rel="stylesheet" type="text/css" href="newLogin-style.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
 <div id="wrapper">
