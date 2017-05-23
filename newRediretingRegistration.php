@@ -10,11 +10,16 @@ Redirecting in 3 seconds!
 </body>
 </html>
 <?php 
+	include ('config.php');
 	if (isset($_POST["username"]) && isset($_POST["firstname"]) && isset($_POST["contactnumber"]) && isset($_POST["lastname"]) && isset($_POST["password"])) {
 		$username = $_POST['username'];
 		$firstname = $_POST['firstname'];
+		$lastname = $_POST['lastname'];
+		$password = $_POST['password'];
 		$contactnumber = $_POST['contactnumber'];
-		echo "Welcome  ".$username. $firstname;
+		$query = "INSERT into users(first,last,pass,user,contact_number) value('$firstname','$;lastname','$password','$username','$contactnumber');";
+		$result = $conn -> query($query);
+		echo "Welcome  ".$username. " ". $firstname;
 	}
 ?>
 
