@@ -2,95 +2,177 @@
 <html>
 
 <head>
-  <!--Bootstrap-->
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- -->
+  <title>4Bytes</title>
+  <style>
+         
+				h1{
+				    font-family: 'Crete Round', serif;
+	                font-weight: bold;
+	                color: blue;
+	                font-size: 65px;
+	                margin-left: 200px;
+					float: left;
+	                margin-top: 10px;
+					
+				  }
+				header {
+	                     height: 120px;
+                        }
+				
+				header h1 {
+	float: left;
+	margin-top: 1px;
+	margin-left: 50px;
+}
 
-  <title>
-    Welcome to Fourbytes!
-  </title>
+header h1 .color {
+	color: #02b8dd;
+}
 
-  <!--Css link -->
-  <link rel="stylesheet" type="text/css" href="logindesign.css">
+header nav {
+	float: right;
+}
+
+header nav ul li {
+	float: left;
+	display: inline-block;
+	margin-top: 30px;
+	
+}
+
+header nav ul li a {
+	color: blue;
+	
+	
+	display: block;
+	margin-right: 20px;
+	margin: 0 0 3px 0;
+	
+}
+			    body{
+					 font-family: "Segoe UI";
+					 font-weight: lighter;
+                    }
+				 p {
+	      
+        }
+				
+ .wrapper {
+                	margin: 0 auto;
+                	padding: 0 10px;
+                	width: 940px;
+               }
+			    #features ul {
+	margin: 50px 0;
+}
+#features ul li {
+	width: 275px;
+	padding-top: 20px;
+	float: left;
+	margin-right: 15px;
+	text-align: center;
+}
+
+
+footer {
+	padding: 10px 0;
+	background-color: #f8fafa;
+}
+
+#footer-info {
+	width: 380px;
+	float: left;
+	margin-top: 5px;
+}
+
+
+				
+  </style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="shortcut icon" href="bytes-icon.ico" />
+	<link href='http://fonts.googleapis.com/css?family=Crete+Round' rel='stylesheet' type='text/css'>
 </head>
 
-<body style="background-image: url('/IS310A/images/skyline-buildings-new-york-skyscrapers.jpg');background-repeat: no-repeat;background-attachment: fixed;">
-
-  <?php 
-if(!isset($_COOKIE['email']))
+<?php 
+if(!isset($_COOKIE['username']))
 {
 ?>
+<body>
 
-  <div class="header">
-    <h1 class="headertext">Welcome to </br>4BYTES!</h1>
-  </div>
+ <header>
+      <div class="wrapper">
+	  <h1>4Bytes<span class="color"></span></h1> 
+	     <nav>
+	  
+	     <ul>
+				
+				
+				<li><a href="http://localhost:8080/IS310A/login/newLogin.php"><input type = "submit" value = "Log In" onClick = "MagisLoginValidation()"></a></li>
+				
+				
+				
+		  </ul>
+	  </nav>
+      </div>
+	  
+	</header>
+	
+	<div style="height:550px; background-color:lightblue;">
+      <br>
+	  
+      <br>
+         <div id="features">
+		   <div class="wrapper">
+             <ul style="list-style: none;">
+			 
+			 <li>
+			 <img src="find.jpg" alt="search" style="width:200px;height:200px;">
+			 <h3>Look</h3>
+                <p>for any item that you want to buy</p>
+				<p>we've almost got it all for you</p>
+                
+             </li>
+			 
+             <li>
+			 <img src="purchase.jpg" alt="search" style="width:200px;height:200px;">
+             <h3>Purchase</h3>
+                <p>conveniently and with affordable price</p>
+                
+            </li>
+			
+  			<li>
+			 <img src="sell.jpg" alt="search" style="width:200px;height:200px;">
+	         <h3>Sell</h3>
+                <p>items that you don't use but should still be functionable</p>
+               
+            </li>
+            </ul>
+          </div>			
+		</div>
+	</div>
 
-  <div class="container" id="forms">
-
-    <form name="Form1" id="firstForm">
-
-      <!-- input type text consist of the username and password -->
-      <table align="center">
-        <!-- Using Space to get the input into the center screen.-->
-        <tr>
-          <td>
-            <p>Email:</p>
-          </td>
-          <td><input class="txt-css" type="text" id="userName" value=""></td>
-        </tr>
-
-        <tr>
-          <td>
-            <p>Password:</p>
-          </td>
-          <td><input class="txt-css" type="password" id="passWord" value=""></td>
-        </tr>
-
-        <tr>
-          <td colspan="2">
-            </br>
-            </br>
-            <center>
-              <input class="button-css" type="button" name="" value="Log in" onClick="validation()">
-            </center>
-          </td>
-        </tr>
-      </table>
-      <center>
-        </br>Don't have an account yet? <a href="/IS310A/registration/register.php"> Sign up here! </a></center>
-      </br>
-    </form>
-
-    <form name="Form2" action="/IS310A/login/redirect-login.php" method="post">
-      <input type="hidden" value="" id="passUsername" name="passUsername">
-      <input type="hidden" value="" id="passPassword" name="passPassword">
-    </form>
-  </div>
-
-  <?php
+	 <footer>
+	  <div class="wrapper">
+		<div id="footer-info">
+		  <p>Copyright 2017 4Bytes. All rights reserved.</p>
+		  <p><a href="#">Terms of Service</a> I <a href="#">Privacy</a></p>
+		</div>
+		
+		<div class="clear"></div>
+	  </div>
+	</footer>
+	  <br>
+	  <br>
+	  
+<?php
+include ("config.php");
+include ('loginserver.php');
 }else{header("Refresh:0;url=/IS310A/tempHome/home.php");}
 ?>
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="bootstrap-3.3.7-dist/jquery.min.js"></script>
-    <script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
-    <!-- -->
-    <script>
-      function validation() {
-        var username = document.Form1.userName.value;
-        var password = document.Form1.passWord.value;
-        if (username == "" || password == "") {
-          alert("Please input your username or password!");
-        } else {
-          document.getElementById("passUsername").value = username;
-          document.getElementById("passPassword").value = password;
-          document.Form2.submit();
-        }
-      }
-    </script>
-
+	  
 </body>
 
 </html>
