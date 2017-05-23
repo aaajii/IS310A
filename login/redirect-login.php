@@ -10,7 +10,7 @@ User Validating!
 </body>
 </html>
 <?php
-if(!isset($_COOKIE['email']))
+if(!isset($_COOKIE['username']))
 {
 	include ('config.php');
 	if(isset($_POST['passUsername']) && isset($_POST['passPassword']))
@@ -19,8 +19,8 @@ if(!isset($_COOKIE['email']))
 		$password = $_POST['passPassword'];
 		
 		
-	$result = $conn -> query("SELECT * FROM users WHERE email = '$username' AND password = '$password'");
-	if (!mysqli_query($conn,"SELECT * FROM users WHERE email = '$username' AND password = '$password'"))
+	$result = $conn -> query("SELECT * FROM users WHERE username = '$username' AND password = '$password'");
+	if (!mysqli_query($conn,"SELECT * FROM users WHERE username = '$username' AND password = '$password'"))
 	  {
 	  echo("Error description: " . mysqli_error($conn));
 	  }
@@ -28,19 +28,8 @@ if(!isset($_COOKIE['email']))
 	$count = count($verify);
 		if($count>0)
 		{
-			if($verify['status'] == 0)
-			{
-				echo "<p id='statement'> Your account has not yet been confirmed by the admin. Please try again later. Redirecting you to the log-in page now </p>";
-				header("Refresh:3;url=login.php");
-			}else if($verify['status'] == 2)
-			{
-				setcookie('email',$verify['email'],time()+86400,'/');
-				header("Location: /IS310A/adminView/adminpage.php");
-			}
-			else{
-				setcookie('email',$verify['email'],time()+86400,'/');
+				setcookie('username',$verify['username'],time()+86400,'/');
 				header("Location: /IS310A/tempHome/home.php");
-			}
 		}
 	else
 	{
@@ -52,5 +41,5 @@ if(!isset($_COOKIE['email']))
 		
 		
 	}
-}else{header("Location:home.php");}
+}else{header("Location:/IS310A/tempHome/home.php");}
 ?>

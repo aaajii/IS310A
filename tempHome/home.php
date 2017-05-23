@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <?php
-if(isset($_COOKIE['email']))
+if(isset($_COOKIE['username']))
 {
 	?>
 <html>
@@ -61,11 +61,11 @@ Welcome to Our Home Page!
 
 </html>
 <?php
-}else{header("Location: /IS310A/login/login.php");}
+}else{header("Location: /IS310A/newLogin.php");}
 if(isset($_POST['Lout']))
 {
-	$a = $_POST['Pout'];
-	setcookie('email','wew',time()-86400,'/');
-	header("Location: /IS310A/login/login.php");
+	$a = $_POST['Lout'];
+	setcookie('username','wew',time()-86400,'/');
+	header("Location: /IS310A/newLogin.php");
 }
 ?>
