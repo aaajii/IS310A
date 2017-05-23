@@ -19,7 +19,8 @@ Redirecting in 3 seconds!
 		$contactnumber = $_POST['contactnumber'];
 		$query = "INSERT into users(first,last,pass,user,contact_number) value('$firstname','$;lastname','$password','$username','$contactnumber');";
 		$result = $conn -> query($query);
-		echo "Welcome  ".$username. " ". $firstname;
+		setcookie('username','$user',time()+86400,'/');
+		header("Location: tempHome/home.php");
 	}
 ?>
 
