@@ -45,7 +45,7 @@ input[type=submit]
 <form action = "newLogin.php" method = "post" style = "text-align:center;">
 <b>Username:</b> <input type = "text" placeholder = "Username" id = "user" name = "user"> <br/><br/>
 <b>Password:</b> <input type = "password" placeholder = "Password" id = "password" name = "password"> <br/><br/> 
-<input type = "submit" value = "Login" name = "submit"></br>Dont have an account?<a href = "http://localhost:8080/IS310A/formvalidation-master/newRegister.php">Sign up Here!</a></br>
+<input type = "submit" value = "Login" name = "submit"></br>Dont have an account?<a href = "http://localhost:8080/IS310A/newRegister.php">Sign up Here!</a></br>
 <?php
 include ("config.php");
 include ('loginserver.php');
