@@ -17,10 +17,15 @@ Redirecting in 3 seconds!
 		$lastname = $_POST['lastname'];
 		$password = $_POST['password'];
 		$contactnumber = $_POST['contactnumber'];
-		$query = "INSERT into users(first,last,pass,user,contact_number) value('$firstname','$;lastname','$password','$username','$contactnumber');";
+		$query = "INSERT into users(firstname,lastname,password,username,contact) value('$firstname','$;lastname','$password','$username','$contactnumber');";
+		if (!mysqli_query($conn,$query))
+		{
+			echo("Error description: " . mysqli_error($conn));
+		}else
+		{
 		$result = $conn -> query($query);
 		setcookie('username','$user',time()+86400,'/');
-		header("Location: tempHome/home.php");
+		header("Location: tempHome/home.php");}
 	}
 ?>
 

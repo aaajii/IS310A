@@ -66,6 +66,6 @@ if(isset($_POST['Lout']))
 {
 	$a = $_POST['Lout'];
 	setcookie('username','wew',time()-86400,'/');
-	header("Location: /IS310A/newLogin.php");
+	header("Location: /IS310A/login/newLogin.php");
 }
 ?>

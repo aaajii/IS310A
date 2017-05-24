@@ -40,7 +40,7 @@
 		<div>
 			<input type="submit" class="btn" name="register" value="Register">
 		</div>
-		Already Have an Account?<a href = "newLogin.php"></br>Login Here</a>
+		Already Have an Account?<a href = "/IS310A/login/newLogin.php"></br>Login Here</a>
 	</form>
 </div>
 </body>
