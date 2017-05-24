@@ -8,17 +8,23 @@
 <body>
 <div id="wrapper">
 	<form method="POST" action="newRediretingRegistration.php" onsubmit="return Validate()" name="vForm">
-		<div>
-			Username:<input type="text" name="username" class="textInput" placeholder="Username" >
-			<div id="name_error" class="val_error"></div>
-		</div>
-		<div>
+													<h1>Personal Information</h1>
+		<div>						
 			First Name:<input type = "text" name = "firstname" class = "textInput" placeholder = "First Name" >
 			<div id="firstname_error" class="val_error"></div>
 		</div>
 		<div>
 			Last Name:<input type = "text" name = "lastname" class = "textInput" placeholder = "Last Name" >
 			<div id="lastname_error" class="val_error"></div>
+		</div>
+		<div>
+			Contact Number:<input type = "text" name = "contactnumber" class ="textInput" placeholder = "09XX-XXX-XXXX"  onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
+			<div id ="contactnumber_error" class = "val_error"></div>
+		</div>
+													<h1>Account Information</h1>
+		<div>
+			Username:<input type="text" name="username" class="textInput" placeholder="Username" >
+			<div id="name_error" class="val_error"></div>
 		</div>
 		<div>
 			Password:<input type="password" name="password" class="textInput" placeholder="Password">
@@ -29,18 +35,9 @@
 			<div id="password_error2" class="val_error"></div>
 		</div>
 		<div>
-			Contact Number:<input type = "text" name = "contactnumber" class ="textInput" placeholder = "09XX-XXX-XXXX"  onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
-			<div id ="contactnumber_error" class = "val_error"></div>
-		</div>
-		<!--<div>
-			<input type="radio" name="gender" value="Male">Male
-			<input type="radio" name="gender" value="Female">Female
-			<div id = "gender_error" class = "val_error"></div>
-		</div>-->
-		<div>
 			<input type="submit" class="btn" name="register" value="Register">
 		</div>
-		Already Have an Account?<a href = "newLogin.php"></br>Login Here</a>
+		<p>Already Have an Account?</p><a href = "/IS310A/login/newLogin.php">Login Here !</a>
 	</form>
 </div>
 </body>
@@ -73,16 +70,6 @@
 	password.addEventListener("blur",passwordVerify,true);
 	function Validate()
 	{
-		// VALIDATE USERNAME
-			if(username.value.toString().length < 8)
-			{
-					name_error.textContent = "Username is required and should be at least 8 characters and above";
-					username.style.border = "1px solid red";
-					username.focus();
-			return false;
-			}
-		else
-		{
 			// VALIDATE FIRST NAME
 		if(first_name.value === "")
 		{
@@ -93,7 +80,7 @@
 		}
 		else
 		{
-		// VALIDATE LAST NAME
+			// VALIDATE LAST NAME
 		if(last_name.value === "")
 		{
 			lastname_error.textContent = "Last Name is required";
@@ -101,9 +88,30 @@
 			last_name.focus();
 			return false;
 		}
+		else
+		{
+						// VALIDATE CONTACT NUMBER
+		if(contact_number.value.toString().length < 11 || contact_number.value.toString().length > 11)
+		{
+			contactnumber_error.textContent = "Contact Number is required and must be exactly 11 digits";
+			contact_number.style.border = "1px solid red";
+			contact_number.focus();
+			return false;
+		}
 			else
 			{
-								// PASSWORD REQUIRED
+					// VALIDATE USERNAME
+			if(username.value.toString().length < 8)
+			{
+					name_error.textContent = "Username is required and should be at least 8 characters and above";
+					username.style.border = "1px solid red";
+					username.focus();
+			return false;
+			}
+						
+			else
+			{
+				// PASSWORD REQUIRED
 		if(password.value.toString().length < 5)
 		{
 			password_error1.textContent = "Password should be at least 6 characters above";
@@ -111,7 +119,8 @@
 			password.focus();
 		 	return false;
 		}
-			else
+	
+		else
 			{
 				// CONFIRMATION PASSWORD Required
 				if(password_confirmation.value === "")
@@ -121,9 +130,10 @@
 			password.focus();
 			return false;
 		}
-		else
+							
+			else
 			{
-							// VALIDATE PASSWORD
+				// VALIDATE PASSWORD
 		if (password.value !== password_confirmation.value)
 			{
 			password_error2.textContent = "The two passwords do not match";
@@ -132,33 +142,23 @@
 			password.focus();
 			return false;	
 		}
-			else
-			{
-				// VALIDATE CONTACT NUMBER
+		else
+		{		
+// VALIDATE CONTACT NUMBER
 		if(contact_number.value.toString().length < 11 || contact_number.value.toString().length > 11)
 		{
 			contactnumber_error.textContent = "Contact Number is required and must be exactly 11 digits";
 			contact_number.style.border = "1px solid red";
 			contact_number.focus();
 			return false;
-		}
-		else
-		{
-			/*if(genderx.value == "")
-			{
-				gender_error.textContent = "Gender Required";
-				gender.style.border = "1px solid red";
-				gender.focus();
-				return false;
-			}*/
-				
+		}	
 }
 }
 }
 }
 }
-	}
-		}
+}
+}
 }
 	// ADD EVENT LISTENERS
 	function nameVerifyLength()
@@ -215,35 +215,4 @@
 			return true;
 		}
 	}
-		/*function radioChecker(gender)
-		{
-			var i;
-			for(i=0;i<gender.length;i++)
-			{
-				if(gender[i].checked)
-				{
-					return gender[i].value;
-				}
-				
-			}
-		}
-		function genderVerify()
-		{
-			if(gender.value != "")
-			{
-				gender_error.innerHTML = "";
-				gender.style.border =  "1px solid #110E0F";
-			}
-		}
-	/*function confirmationpasswordVerify()
-	{
-			if(password_confirmation.value != "")
-			{
-				password_error.innerHTMl = "";
-				password_confirmation.style.border = "1px solid #110E0F";
-				return true;
-			}
-	}
-	}
-	*/
 </script>
