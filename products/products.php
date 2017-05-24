@@ -12,8 +12,7 @@
 	include 'config.php';
 	
 	$test = " SELECT * 
-			  FROM  `products`
-			  WHERE  `allowed` = 1;";
+			  FROM  `products`";
 	//Let me check if there are errors ahehe
 	if (!mysqli_query($conn,$test))
 	{
