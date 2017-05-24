@@ -40,7 +40,7 @@
 		echo " <div class='responsive'>
 				  <div class='product'>
 					<center><a href='productdetails.php?id=".$result['itemID']."'>
-					  <img src='".$result['itemImage']."' alt='".$result['itemName']."' style='width:30%;height:auto;'>
+					  <img src='".$result['itemImage']."' alt='1024px-No_image_available.svg.png' style='width:30%;height:auto;'>
 					</a>
 					<p><span><b> Price: </b>".$result['itemPrice']." </span></p></center>
 					

@@ -3,7 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <title>A Pen by  Jimuel Banawan</title>
+  
+  
+  
       <link rel="stylesheet" href="detail-style.css">
+
+  
 </head>
 
 <body>
@@ -13,7 +18,6 @@
 <body>
   <div class="image-header">
     <h1> Product Name </h1>
-	<h4> In stock: <span class="stock"> 0 </span></h4>
   </div>
   <div class="image-holder">
 
@@ -21,33 +25,32 @@
   <div class="product-details">
     <span class="details"> Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolorLorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsu</span>
     </div>
-	<center><div class="add-calculations">
-	  <b>Total Price:</b> <span id="price">0</span> <br/>
-	  <span class="quantity">Quantity</span> <button id="less">-</button>
-		<b id="info"></b>
-		<button id="more">+</button>
-	  <br />
-	  <button class="add-to-cart">Add To Cart <img src="shoppingcart-icon.png" alt="" class="icon"> </button>
-    </div></center>
+    <center><div class="add-calculations">
+      <b>Total Price:</b> <span class="price">0</span> <br/>
+      <span class="quantity">Quantity</span> <button id="minus" class="qtyButton"> - </button><span> 1 </span> <button id="plus" class="qtyButton"> + </button>
+      <br />
+      <button class="add-to-cart">Add To Cart <img src="" alt="" class="icon"> </button>
+      </div></center>
   <div class="seller-info">
     <h2 class="seller-name"> Seller Name </h2>
     <p class="seller-details" >Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor </p>
-    <span class=""> Contact No. </span> <span class="number"> 09XX-XXX-XXXX</span>
+    <span class="contact"> Contact No. </span> <span class="number"> 09XX-XXX-XXXX</span>
     <br />
     <button class="profile"> See Seller Profile</button>
   </div>
   
   <!--Lagyan ko ng javascript ahehe -->
-  <script src="/IS310A/extras/bootstrap-3.3.7-dist/jquery.min.js"></script>
+  <script src="/IS310/extras/bootstrap-3.3.7-dist/jquery.min.js"></script>
   <script>
+    <script>
 	$(document).ready(function(){
 <!-- PHP CODING TIME! -->
 <?php
-		if (isset($_GET['id']))
+		if (isset($_SERVER['id']))
 		{
 			include 'config.php';
 			
-			$id = $_GET['id'];
+			$id = $_SERVER['id'];
 			$query = "SELECT * FROM  `products` WHERE itemID = '$id';";
 			if (!mysqli_query($conn,$query))
 			{
@@ -55,7 +58,7 @@
 			}
 			$resultItem = $conn -> query($query);
 			
-			if($row = $resultItem ->fetch_assoc())
+			if($row = $resultItem ->fetch_assoc()
 			{
 				$query = "SELECT * FROM  `users` WHERE userID= '".$row['userID']."';";
 				if (!mysqli_query($conn,$query))
@@ -63,15 +66,14 @@
 					echo("lelz bugs, contact the administrator: " . mysqli_error($conn));
 				}
 				$resultUser = $conn -> query($query);
-				$bushit = '"';
-				if($user = $resultUser->fetch_assoc())
+				if($user = $resultUser->fetch_assoc()
 				{
 					echo "
+					
 					$('.image-header h1').html('".$row['itemName']."');
-					$('.image-holder').css('background-image','url($bushit".$row['itemImage']."$bushit)');
+					$('.image-holder').css('background-image,'url('".$row['itemImage']."')');
 					$('.product-details .details').html('".$row['itemDescription']."');
-					$('.add-calculations #price').html('".$row['itemPrice']."');
-					$('.stock').html('".$row['stock']."');
+					$('.add-calculations .price').html('".$row['itemPrice']."' Pesos);
 					
 					$('.seller-info .seller-name').html('".$user['firstname']." ". $user['lastname']."');
 					$('.seller-details').html('wala pa na implement ang new database ahahah ulul');
@@ -79,8 +81,7 @@
 					";
 				}else
 				{
-					echo "Eghk, that item is not available... Ill redirect you back to the browsing page";
-					header("Refresh: 3; url=products.php");
+					echo "ahhhh fuk, walang user". mysqli_error($conn);
 				}
 			}else
 			{
@@ -96,27 +97,6 @@
 ?>
 		
 	});
-	var howMany = 1;
-	var price = <?php echo $row['itemPrice']?>;
-	$('#more').click(function(){
-		if(howMany < $(".stock").text())
-		{
-			howMany += 1;
-			$("#info").text(howMany);
-			
-	$("#price").text(howMany*price);
-		}
-	});
-	$('#less').click(function(){
-		if(howMany > 1)
-		{
-			howMany -= 1;
-			$("#info").text(howMany);
-			
-	$("#price").text(howMany*price);
-		}
-	});
-	$("#info").text(howMany);
   </script>
 </body>
 </html>

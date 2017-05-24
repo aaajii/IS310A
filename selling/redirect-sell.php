@@ -39,8 +39,7 @@
 		//Hell yeah! Lets check if dat shit inserted. Dank memes bruh ehehehe
 		if ($execute == true)
 		{
-			echo "<text> Thank you for selling your item here! <br/>
-					note** <b> it must be confirmed by the admin before being posted </b>";
+			echo "<text> Thank you for selling your item here! You can view it now in the store <br/>";
 			header ("Refresh: 2; url: home.php");
 			
 		}else{echo("Dude, there r bugs: ".mysqli_error($conn));}
