@@ -5,8 +5,8 @@
     <title>Home - 4Bytes</title>
 	<style>
 	  body {
-	         background-color: #fff;
-	         color: #777;
+	         background-color: white;
+	         color: blue ;
 	         font: normal 15px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
            }
 
@@ -20,7 +20,7 @@
 	       font-weight: bold;
 	       color: blue;
 	       font-size: 65px;
-	       margin-bottom: 20px;
+	      
          }
 
       h2 {
@@ -34,7 +34,7 @@
 
       h3 {
 	       font-size: 30px;
-	       color: #444;
+	       color: blue;
 	       font-weight: bold;
 	       
 	       text-align: center;
@@ -43,7 +43,7 @@
 
       h4 {
 	       font-size: 24px;
-	       color: #444;
+	       color: blue;
 	       font-weight: bold;
 	       text-transform: uppercase;
 	       margin-bottom: 20px;
@@ -51,18 +51,18 @@
 
       h5 {
 	       font-size: 15px;
-	       color: #444;
+	       color: blue;
 	       font-weight: bold;
 	       
          }
 
       a {
 	      text-decoration: none;
-	      color: #444;
+	      color: blue;
         }
 
       a:hover {
-	            color: #02b8dd;
+	            color: blue;
               }
 
       strong {
@@ -71,7 +71,7 @@
 
       small {
 	          font-size: 13px;
-	          color: #777;
+	          color: blue;
 	          font-style: italic;
             }
 
@@ -96,7 +96,7 @@ header h1 {
 }
 
 header h1 .color {
-	color: #02b8dd;
+	color: blue;
 }
 
 header nav {
@@ -110,8 +110,8 @@ header nav ul li {
 }
 
 header nav ul li a {
-	color: #444;
-	text-transform: uppercase;
+	color: blue;
+	
 	font-weight: bold;
 	display: block;
 	margin-right: 20px;
@@ -132,7 +132,7 @@ header nav ul li a {
 	text-align: center;
 	background: #444;
 	border-radius: 3px;
-	color: #fff;
+	color: blue;
 	width: 180px;
 	height: 50px;
 	font-size: 20px;
@@ -142,7 +142,7 @@ header nav ul li a {
 
 .button-1:hover {
 	background-color: #02b8dd;
-	color: #fff;
+	color: blue;
 }
 #features ul {
 	margin: 80px 0;
@@ -174,10 +174,12 @@ header nav ul li a {
 #primary-content a img {
 	margin: 20px 0;
 }
-#secondary-content {
-	padding: 60px 0;
-	text-align: center;
-}
+
+#left {float:left}
+
+#right {float:right}
+
+#clear {clear:both}
 
 #secondary-content article {
 	width: 460px;
@@ -204,7 +206,7 @@ article h4 {
 
 .more-link {
 	border: 1px solid #02b8dd;
-	color: #02b8dd;
+	color: blue;
 	padding: 6px 20px;
 	border-radius: 3px;
 }
@@ -251,6 +253,61 @@ footer {
 #footer-links ul li {
 	margin: 5px 0;
 }
+img
+{
+	border-radius: 75px;
+	border: solid 5px black;
+}
+
+ul {
+	  list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: white;
+    float: left;
+}
+
+li {
+	  list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: white;
+    float: left;
+}
+
+li a {
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: white;
+	color : yellow;
+}
+li a {
+	    border: 0.05px solid black;
+	width: auto;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+}
+
+li a:hover{
+    background-color: black; 
+    color: white;
+}
+
+li a:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+#bottom
+{
+	color: blue;
+}
 	</style>
     
 	<link rel="stylesheet" type="text/css" href="css/reset.css">
@@ -265,14 +322,18 @@ footer {
 		<h1>4Bytes<span class="color"></span></h1>
 		<nav>
 		  <ul>
-				<li><a href="#">Home</a></li>
-				<li><a href="#">Portfolio</a></li>
-				<li><a href="#">Contact</a></li>
-				<li><a href="#">Blog </a></li>
+				<li><a href="http://localhost:8080/IS310A/home%20page%204bytes/hp.html">Home</a></li>
+				<li><a href="#">Buy</a></li>
+				<li><a href="http://localhost:8080/IS310A/selling/sellform.html">Sell</a></li>
+				<li><a href="newLogin.php">Log out</a></li>
+				
+				
 		  </ul>
 		</nav>
 	  </div>
 	</header>
+	
+	
 	
 	<div id="hero-image">
 	  <div class="wrapper">
@@ -287,16 +348,15 @@ footer {
 		<ul style="list-style: none;">
 			<li class="feature-1">
 			  <h4>Look</h4>
-				 <p>for any item that you want to buy</p>
-				 <p>we've almost got it all for you</p>
+				 <p>For any item that you want to buy. We've almost got it all for you.</p>
 			</li>
 			<li class="feature-2">
 			   <h4>Purchase</h4>
-				  <p>conveniently and with affordable price</p>
+				  <p>Conveniently and with affordable price.</p>
 			</li>
 			<li class="feature-3">
 			   <h4>Sell</h4>
-			     <p>items that you don't use but should still be functionable</p>	
+			     <p>Items that you don't use but should still be functionable.</p>	
 			</li>
 			<div class="clear"></div>
 		</ul>
@@ -307,67 +367,147 @@ footer {
 	  <div class="wrapper">
 		<article>
 		  <h3>Featured Content</h3>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod leo a nibh dignissim tincidunt. Nam ultricies odio ac neque suscipit volutpat. Ut dictum adipiscing felis sed malesuada. Integer porta sem nec nibh hendrerit imperdiet. </p>
-			<a href="#"><img src="images/video-placeholder.jpg" alt="video placeholder" /></a>
+			<p align = "center">Something here! </p>
+			<p align = "center"> <img src = "SALE.jpg" style = "width:900px;height:400px;"  align = "center"></p>
 		</article>
 	  </div>
 	</div>
 	
-	<div id="secondary-content">
+	<table border = "0"> <!-- 1st 2 pics-->
+	<tr>
+	<td>
+	<div id="left">
 	  <div class="wrapper">
-		<article style="background-image: url('images/article-image-1.jpg');">
-		  <div class="overlay">
+		<img src = "laptop.jpg" style = "width:300px;height:200px;">
+		 <div class="overlay">
 				<h4>Secondary Content</h4>
-				<p><small>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod leo a nibh dignissim tincidunt nam.</small></p>
-				<a href="#" class="more-link">View more</a>
-		  </div>
-		</article>
-		<article style="background-image: url('images/article-image-2.jpg');">
+				<p><small>Something here!</small></p>
+				<a href="#" class="more-link"><b>View more!</b></a>
+		 </div>
+		 </td>
+			<br>
+			<td>
+		<div id="right">
+		<div class="left clear"></div>
+		<div class="right"></div>
+		<img src = "Jim.jpg" style = "width:300px;height:200px;">				
 		  <div class="overlay">
-				<h4>Secondary Content</h4>
-				<p><small>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod leo a nibh dignissim tincidunt nam.</small></p>
-				<a href="#" class="more-link">View more</a>
+				<h4>Admins</h4>
+				<p><small>Something here!</small></p>
+				<a href="#" class="more-link"><b>View more!</b></a>
 		  </div>
-		</article><div class="clear"></div>
+		  </td>
+		  </tr>
+		  </table>
+		  <br>
+		<table border = "0"> <!-- 2nd 2 pics-->  
+		<tr>  
+		<td>  
+		<div id="left">
+		<div class="wrapper">
+		<img src = "phone.jpg" style = "width:300px;height:200px;">
+		 <div class="overlay">
+				<h4>Secondary Content</h4>
+				<p><small>Something here!</small></p>
+				<a href="#" class="more-link"><b>View more!</b></a>
+		 </div>
+		 </td>
+			<br>
+			<td>
+		<div id="right">
+		<div class="left clear"></div>
+		<div class="right"></div>
+		<img src = "Ben.jpg" style = "width:300px;height:200px;">				
+		  <div class="overlay">
+				<h4>Admins</h4>
+				<p><small>Something here!</small></p>
+				<a href="#" class="more-link"><b>View more!</b></a>
+		  </div>
+		  </td>
+		  </tr>
+		  </table>
+		  
+		  <table border = "0"> <!-- 1st 2 pics-->
+	<tr>
+	<td>
+	<div id="left">
+	  <div class="wrapper">
+		<img src = "watch.jpg" style = "width:300px;height:200px;">
+		 <div class="overlay">
+				<h4>Secondary Content</h4>
+				<p><small>Something here!</small></p>
+				<a href="#" class="more-link"><b>View more!</b></a>
+		 </div>
+		 </td>
+			<br>
+			<td>
+		<div id="right">
+		<div class="left clear"></div>
+		<div class="right"></div>
+		<img src = "elton.jpg" style = "width:300px;height:200px;">				
+		  <div class="overlay">
+				<h4>Admins</h4>
+				<p><small>Something here!</small></p>
+				<a href="#" class="more-link"><b>View more!</b></a>
+		  </div>
+		  </td>
+		  </tr>
+		  </table>
+		  <br>
+		<table border = "0"> <!-- 2nd 2 pics-->  
+		<tr>  
+		<td>  
+		<div id="left">
+		<div class="wrapper">
+		<img src = "tablet.jpg" style = "width:300px;height:200px;">
+		 <div class="overlay">
+				<h4>Secondary Content</h4>
+				<p><small>Something here!</small></p>
+				<a href="#" class="more-link"><b>View more!</b></a>
+		 </div>
+		 </td>
+			<br>
+			<td>
+		<div id="right">
+		<div class="left clear"></div>
+		<div class="right"></div>
+		<img src = "Andrew.jpg" style = "width:300px;height:200px;" style = "border-radius: 50px;">				
+		  <div class="overlay">
+				<h4>Admins</h4>
+				<p><small>Something here!</small></p>
+				<a href="#" class="more-link"><b>View more!</b></a>
+		  </div>
+		  </td>
+		  </tr>
+		  </table>
+		  
+		
+		<div class="clear"></div>
 	  </div>
 	</div>
+	</td>
+	</tr>
+	</table>
 	
+	<br>
 	<div> 
 	  <h3>So, what are you waiting for...</h3>
-	  <table align = "center">
-      <tr>
-      <td>
-        <center><button class="button button2"><a href = "http://localhost:8080/php-shopping-cart-master/" style ="color:white;">Buy here</a></button></center>
-      </td>&nbsp;&nbsp;&nbsp; <td>
-	    <center><button class="button button2"><a href = "sellform.php" style ="color:white;">Sell here</a></button></center>
-      </td></tr>
-	 </table>
-	</div>
-	<form name = "myForm">
-    <center>
-    <h5>Would you like to Log Out?</h5>
-    <input type = "hidden" value = "logout" name = "Lout" id = "Lout">
-    <input type = "button" value = "Log out" name = "logout" id = "logout" onClick = "validation()">
-    </center>
-    </form>
-    <form name = "myForm2" action = "login.php" method = "post">
-    <input type = "hidden" value = "" name = "Pout" id = "Pout">
-    </form>
+	 
 	
 	<br><br>
-	<marquee scrollamount = "25"> <!-- speed siya sa pics-->
-<center><img src = "phone.jpg" width = "22%"/> <!-- picture niya and size niya-->
-<img src = "tablet.jpg" width = "22%"/> <!-- picture niya and size niya-->
-<img src = "laptop.jpg" width = "22%"/> <!-- picture niya and size niya-->
-<img src = "watch.jpg" width = "22%"/></center></marquee> <!-- picture niya and size niya-->
+<!--	<marquee scrollamount = "25"> <!-- speed siya sa pics
+<center><img src = "phone.jpg" width = "22%"/> <!-- picture niya and size niya--
+<img src = "tablet.jpg" width = "22%"/> <!-- picture niya and size niya--
+<img src = "laptop.jpg" width = "22%"/> <!-- picture niya and size niya--
+<img src = "watch.jpg" width = "22%"/></center></marquee> <!-- picture niya and size niya--
 
 <br><br>
 
-<marquee scrollamount = "25" direction = "right"> <!-- speed siya sa pics and mag start siya sa right side-->
-<center><img src = "watch.jpg" width = "22%"/> <!-- picture niya and size niya-->
-<img src = "laptop.jpg" width = "22%"/> <!-- picture niya and size niya-->
-<img src = "tablet.jpg" width = "22%"/> <!-- picture niya and size niya-->
-<img src = "phone.jpg" width = "22%"/></center></marquee> <!-- picture niya and size niya-->
+<marquee scrollamount = "25" direction = "right"> <!-- speed siya sa pics and mag start siya sa right side--
+<center><img src = "watch.jpg" width = "22%"/> <!-- picture niya and size niya--
+<img src = "laptop.jpg" width = "22%"/> <!-- picture niya and size niya--
+<img src = "tablet.jpg" width = "22%"/> <!-- picture niya and size niya--
+<img src = "phone.jpg" width = "22%"/></center></marquee> <!-- picture niya and size niya--> 
 	
 	<footer>
 	  <div class="wrapper">
@@ -378,10 +518,11 @@ footer {
 		<div id="footer-links">
 			<ul style="list-style: none;">
 			  <li><h5>Company</h5></li>
-				<li><a href="#">About Us</a></li>
-				<li><a href="#">Meet The Team</a></li>
-				<li><a href="#">What We Do</a></li>
-				<li><a href="#">Careers</a></li>
+				<li><a href="#" style = "color: blue;">About Us</a></li>
+				<li><a href="#" style = "color: blue;">Meet The Team</a></li>
+				<li><a href="#" style = "color: blue;">What We Do</a></li>
+				<li><a href="#" style = "color: blue;">Careers</a></li>
+				
 			</ul>
 		</div>
 		<div class="clear"></div>
