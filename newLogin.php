@@ -50,7 +50,7 @@ if(!isset($_COOKIE['username']))
 <form action = "newLogin.php" method = "post" style = "text-align:center;">
 <b>Username:</b> <input type = "text" placeholder = "Username" id = "user" name = "user"> <br/><br/>
 <b>Password:</b> <input type = "password" placeholder = "Password" id = "password" name = "password"> <br/><br/> 
-<input type = "submit" value = "Login" name = "submit">
+<input type = "submit" value = "Login" name = "submit"></br>Dont have an account?<a href = "newRegister.php">Sign up Here!</a></br>
 <?php
 include ("config.php");
 include ('loginserver.php');
