@@ -27,4 +27,33 @@ form div{
 }
 .val_error{
 	color: #FF1F1F;
+}#wrapper{color:white;border-radius:20px; border: 1.5px solid blue;
+	width: 35%;
+	margin: 50px auto;
+	padding: 20px;
+	background:grey;
 }
+form{
+	width: 50%;
+	margin: 100px auto;
+
+}
+form div{
+	margin: 3px auto;
+}
+.textInput{
+	margin-top: 2px;
+	height: 28px;
+	border: 1px solid #5E6E66;
+	font-size: 16px;
+	padding: 1px;
+	width: 100%;
+
+}
+.btn{
+background-color:blue; border-radius:10px; border: 1px solid white;	padding: 7px;
+	width: 100%;
+}.btn:hover{background-color:black;color:blue;}
+.val_error{
+	color: #FF1F1F;
+}a:hover{color:red;}input:hover{background-color:black;color:white;}html{    background-image: url("user.jpg");background-color: #cccccc;}
