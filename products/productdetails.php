@@ -120,7 +120,7 @@
 	$("#info").text(howMany);
 	var total=howMany*price;
 	$(".add-to-cart").click(function(){
-		$.ajax({
+					$.ajax({
 						type: 'POST',
 						url: 'add-to-cart.php',
 						data: { id: <?php echo $_GET['id'] ?>, name: $(".image-header h1").text(),
