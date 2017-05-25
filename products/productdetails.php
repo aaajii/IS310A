@@ -28,8 +28,11 @@
 		<button id="more">+</button>
 	  <br />
 	  <button class="add-to-cart">Add To Cart <img src="shoppingcart-icon.png" alt="" class="icon"> </button>
-    </div></center>
+    <div class="result-box"><span id="feedback"> </span> </div>
+	
+	</div></center>
   <div class="seller-info">
+	<h5> Seller Details: </h5>
     <h2 class="seller-name"> Seller Name </h2>
     <p class="seller-details" >Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor </p>
     <span class=""> Contact No. </span> <span class="number"> 09XX-XXX-XXXX</span>
@@ -103,8 +106,7 @@
 		{
 			howMany += 1;
 			$("#info").text(howMany);
-			
-	$("#price").text(howMany*price);
+			$("#price").text(howMany*price);
 		}
 	});
 	$('#less').click(function(){
@@ -112,11 +114,24 @@
 		{
 			howMany -= 1;
 			$("#info").text(howMany);
-			
-	$("#price").text(howMany*price);
+			$("#price").text(howMany*price);
 		}
 	});
 	$("#info").text(howMany);
+	var total=howMany*price;
+	$(".add-to-cart").click(function(){
+		$.ajax({
+						type: 'POST',
+						url: 'add-to-cart.php',
+						data: { id: name, name: desc,
+								: prce, brand: brnd,
+								image: imge},
+						success: function(response){
+							$('#feedback').html(response);
+						}
+					});
+		
+	});
   </script>
 </body>
 </html>
