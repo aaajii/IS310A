@@ -38,7 +38,7 @@
 							  $welp = $i+1;
 							  echo "<tr>
 								<td>".$row['itemName']."</td> <td> ".$row['itemPrice']."</td> <td>".$_SESSION['quantityList'][$i]."</td><td>$tots</td><td>
-								<a href='shopping-cart.php?id='".$welp."'?qty='".$welp."'><button id='remove'> x </button></a>
+								<a href='shopping-cart.php?num=".$welp."&qty=".$temp."&id=".$_SESSION['idList'][$i]."'><button id='remove'> x </button></a>
 							  </tr>
 							  ";
 							  $total += $tots;
@@ -73,20 +73,44 @@
 	<script> 
 	$('#remove').click(function(){
 			<?php
-				if(isset($_GET['id']))
+				if(isset($_GET['num']))
 				{
-					echo "true!";
-					array_splice($_SESSION['idList'], ($_GET['id']-1),1);
-					array_splice($_SESSION['quantityList'], ($_GET['qty']-1),1);
-					echo "document.getElementById('text').innerHTML = 'deleting...';";
-					header("Refresh: 0.5; url=shopping-cart.php");
-				}else
-				{
-					echo "document.getElementById('text').innerHTML = 'Deleting...'";
-				}
-				//
-				
+					$num = $_GET['num']-1;
+					$id = $_GET['id'];
+					$getstock = "SELECT stock FROM products WHERE itemID = $id;";
+					$getres = "SELECT reserved FROM products WHERE itemID = $id;";
+					
+					if (!mysqli_query($conn,$getstock) || !mysqli_query($conn,$getres))
+					{
+						echo("Error description: " . mysqli_error($conn));
+					}
+					$execute = $conn -> query($getstock);
+					$stocks = $execute -> fetch_assoc();
+					$execute = $conn -> query($getres);
+					$reserved = $execute -> fetch_assoc();
+					$temp1 = $stocks['stock'] + $_GET['qty'];
+					$temp2 = $_SESSION['quantityList'][$num] - $_GET['qty'];
+					$query = "UPDATE products SET stock = ".$temp1.", reserved = ".$temp2." WHERE itemID = $id ;";
+					if (!mysqli_query($conn,$query))
+					{
+						echo("Error description: " . mysqli_error($conn));
+						
+					}
+					if ($conn -> query($query))
+					{
+						array_splice($_SESSION['idList'],$num,1);
+						array_splice($_SESSION['quantityList'],$num,1);
+						echo "document.getElementById('text').innerHTML = 'deleting...';";
+						header("Refresh: 5; url=shopping-cart.php");
+					}
+					else
+					{
+						echo "document.getElementById('text').innerHTML = 'Deleting...'";
+					}
+						//
+				}						
 			?>
+		
 		});
 	</script>
 </body>
