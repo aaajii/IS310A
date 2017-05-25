@@ -7,13 +7,15 @@ Login
 <style>
 .login
 {
-	width: 360px;
-	margin:50px auto;
+	max-width: 360px;
+	max-height: 360px;
+	margin:50px auto; 
 	font:Cambria, "Hoofler Text", "Liberation Serif", Times, "Times New Roman", serif;
 	border-radius:10px;
-	border:2px solid #ccc;
+	border:1px solid #ccc;
 	padding: 10px 40px 25px;
 	margin-top:78px;
+	
 }
 input[type=text], input[type=password]
 {
@@ -36,6 +38,21 @@ input[type=submit]
 	cursor:pointer;
 	border-radius:5px;
 	margin-bottom:15px;
+}
+body
+{
+ background-image: url("code.jpg");
+ background-color: #cccccc;	
+ color: white;
+}
+input:hover
+{
+	background-color:black;
+	color:blue;
+}
+a:hover
+{
+	color:white;
 }
 </style>
 </head>
