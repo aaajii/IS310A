@@ -1,9 +1,4 @@
 <!DOCTYPE html>
-<!-- Jimuel Banawan
-	 Information Systems 2-A
-	  MidExer01.php
--->
-
 <html>
 	<head>
 		<title>mid_Exer01: PHP and MySQL interactions</title>
