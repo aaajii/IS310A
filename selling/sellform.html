@@ -5,31 +5,118 @@
 			<title>Sell</title>
 			<style>
 			    
-body 
-{
-	color: black;
-}	
+                 h1 {
+	       font-family: 'Crete Round', serif;
+	       font-weight: bold;
+	       color: blue;
+	       font-size: 65px;
+	      
+              }
+        .wrapper {
+                	margin: 0 auto;
+                	padding: 0 10px;
+                	width: 940px;
+               }
+         header {
+	              height: 100px;
+				  background-color: gray;
+				  opacity: 0.75;
+	            }
 
-div 
-{
-	border-radius: 10px;
-    float: left;
-    margin-left: 90px;
-	margin-top: 50px;
-	border-style: solid;
-	border-width: 3px;
+         header h1 {
+	                 float: left;
+	                 margin-top: 1px;
+	                 margin-left: 50px;
+                   }
+		
+          header nav {
+	               float: right;
+                     }
+
+      
+		 .btn-group .button {
+    background-color: white;
+    border: none;
+    color: blue;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 17px;
+    cursor: pointer;
+    float: right;
+	margin-top: 40px;
 }
-table 
-{
-	border-collapse: collapse;
+.btn-group .buttonact {
+    background-color: black;
+    border: none;
+    color: blue;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 17px;
+    cursor: pointer;
+    float: right;
+	margin-top: 40px;
 }
+
+.btn-group .button:hover {
+    background-color: black;
+	
+}
+.shopcart{height:60px;width:60px;}
+.btn-group .button2{
+	float: center;
+	border-radius: 50%;
+	margin-top:15px;
+	margin-left:90px;
+	}
+                div.sellform {
+				     border-radius: 5px;
+                     float: left;
+                     margin-left: -250px;
+					 margin-top: 50px;
+					 border-style: solid;
+					 border-width: 1px;
+					 
+                   }
+				div.pic {
+				     border-radius: 5px;
+                     float: left;
+                     margin-right: 100px;
+					 margin-top: 50px;
+					 border-style: solid;
+					 border-width: 1px;
+                   }
+			    table {
+                       border-collapse: collapse;
+                       
+                      }
 			   
     
         </style>
+		<link rel="shortcut icon" href="bytes-icon.ico" />
 		</head>
-		<body background = "asd.jpg">
+		<body>
+		
+		 <header>
+	  <div class="wrapper">
+		<h1>4Bytes<span class="color"></span></h1>
+		
+		<div class="btn-group">
+		  <button class="button"><a href="newLogin.php">Log out</a></button>
+		  <button class="buttonact"><a href="http://localhost:8080/IS310A/selling/sellform.html">Sell</a></button>
+          <button class="button"><a href="#">Buy</a></button>         
+		  <button class="button"><a href="http://localhost:8080/IS310A/home%20page%204bytes/hp.html">Home</a></button>
+          <button class="button2"><a href=""><img class="shopcart " src="shop-cart.png" ></a></button>
+         
+          
+        </div>
+	  </div>
+	</header>
 	
-          <div id="datainput" align="center">
+          <div class="sellform" align="center">
             <table height="400px">
 			<br>
 			
@@ -46,7 +133,7 @@ table
               <td><input type="text" id="price"></td>
             </tr>
 			<tr>
-              <th>Contact no:</th>
+              <th>Contact no.:</th>
               <td><input type="text" id="contact" value=""></td>
             </tr>
 			
@@ -56,47 +143,20 @@ table
             </tr>
         </table>
 
-        <button id="button" name = "button">Sell!</button>
+        <button id="button" name = "button"> Sell!</button>
         <br>
         <br>
         </div>
 		
-		<div id="datainput" align="center">
+		<div class="pic" align="center">
 		  <br>
 		  <br>
-		  
-                -- insert pics here --
-				
+                -- insert pic here -- <br>
+				<img src="blank.jpg">
+		   
 		  <br>
 		  <br>
         </div>
-		
-		<marquee scrollamount = "20"> <!-- speed siya sa pics -->
-			<center><img src = "light.jpg" width = "22%"/> <!-- picture niya and size niya-->
-			<img src = "blue.jpg" width = "22%"/> <!-- picture niya and size niya-->
-			<img src = "light.jpg" width = "22%"/> <!-- picture niya and size niya-->
-			<img src = "blue.jpg" width = "22%"/> <!-- picture niya and size niya-->
-			<img src = "light.jpg" width = "22%"/> <!-- picture niya and size niya-->
-			<img src = "blue.jpg" width = "22%"/> <!-- picture niya and size niya-->	
-			<img src = "light.jpg" width = "22%"/> <!-- picture niya and size niya-->
-			<img src = "blue.jpg" width = "22%"/> <!-- picture niya and size niya-->
-			<img src = "light.jpg" width = "22%"/> <!-- picture niya and size niya-->
-			<img src = "blue.jpg" width = "22%"/> <!-- picture niya and size niya-->
-			<img src = "light.jpg" width = "22%"/> <!-- picture niya and size niya-->
-			<img src = "blue.jpg" width = "22%"/> <!-- picture niya and size niya-->	
-			<img src = "light.jpg" width = "22%"/> <!-- picture niya and size niya-->
-			<img src = "blue.jpg" width = "22%"/> <!-- picture niya and size niya-->	
-			<img src = "light.jpg" width = "22%"/> <!-- picture niya and size niya-->
-			<img src = "blue.jpg" width = "22%"/> <!-- picture niya and size niya-->	
-			<img src = "light.jpg" width = "22%"/> <!-- picture niya and size niya-->
-			<img src = "blue.jpg" width = "22%"/> <!-- picture niya and size niya-->	
-			<img src = "light.jpg" width = "22%"/> <!-- picture niya and size niya-->
-			<img src = "blue.jpg" width = "22%"/> <!-- picture niya and size niya-->	
-			<img src = "light.jpg" width = "22%"/> <!-- picture niya and size niya-->
-			<img src = "blue.jpg" width = "22%"/> <!-- picture niya and size niya-->	
-			<img src = "light.jpg" width = "22%"/> <!-- picture niya and size niya-->
-			<img src = "blue.jpg" width = "22%"/> <!-- picture niya and size niya-->
-			<img src = "light.jpg" width = "22%"/></center></marquee>
 		
 		
 <div id="feedback"></div>
@@ -139,6 +199,7 @@ table
 	
 	});
 </script>
+
 
 </body>
 </html>
