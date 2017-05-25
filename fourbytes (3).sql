@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: May 23, 2017 at 12:12 PM
+-- Generation Time: May 25, 2017 at 02:48 AM
 -- Server version: 5.6.13
 -- PHP Version: 5.4.17
 
@@ -37,22 +37,21 @@ CREATE TABLE IF NOT EXISTS `products` (
   `userID` int(255) NOT NULL COMMENT 'References to users table',
   `itemImage` varchar(255) DEFAULT NULL,
   `dateAdded` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `stock` int(11) NOT NULL,
+  `reserved` int(11) NOT NULL,
   PRIMARY KEY (`itemID`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=15 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=12 ;
 
 --
 -- Dumping data for table `products`
 --
 
-INSERT INTO `products` (`itemID`, `itemName`, `itemDescription`, `itemPrice`, `itemBrand`, `userID`, `itemImage`, `dateAdded`) VALUES
-(7, 'Buster Sword', 'a HUGE SWORD ;)))', 822, 'MHFU', 2, 'https://vignette2.wikia.nocookie.net/monsterhunter/images/e/ec/1stGen_and_2ndGen-Great_Sword_Render_009.png/revision/latest/scale-to-width-down/66?cb=20120512064435', '2017-05-21 05:46:00'),
-(8, 'White Serpent Blade', 'Beautiful Great Sword made from white Giaprey scales. Lined with gold fangs. Beautiful Great Sword made from white Giaprey scales. Lined with gold fangs.', 384, 'MHFU', 2, 'https://vignette3.wikia.nocookie.net/monsterhunter/images/c/cf/2ndGen-Great_Sword_Render_014.png/revision/latest/scale-to-width-down/64?cb=20120512092913', '0000-00-00 00:00:00'),
-(9, 'Ravager Blade', 'Iron Great Sword with a vicious serrated edge. Can be further improved.', 576, 'MHFU', 2, 'https://vignette3.wikia.nocookie.net/monsterhunter/images/b/b6/1stGen_and_2ndGen-Great_Sword_Render_005.png/revision/latest/scale-to-width-down/80?cb=20120512064402', '0000-00-00 00:00:00'),
-(10, 'Khezu Shock Sword', 'Made of Khezu. Wrapped in attribute material with an electrified blade.', 624, 'MHFU', 2, 'https://vignette4.wikia.nocookie.net/monsterhunter/images/1/1b/1stGen_and_2ndGen-Great_Sword_Render_036.png/revision/latest/scale-to-width-down/60?cb=20120512093241', '2017-05-21 07:02:46'),
-(11, 'Decider', 'Heavy Great Sword of high quality steel. Symbol of ancient judges authority.', 1104, 'MHFU', 2, 'https://vignette2.wikia.nocookie.net/monsterhunter/images/7/7e/2ndGen-Great_Sword_Render_001.png/revision/latest/scale-to-width-down/90?cb=20120512011119', '2017-05-21 14:10:34'),
-(12, 'Scarborough Shoal', 'Shoal of scarborough lol ad astra per aspera nostoros en la campo a mi burro mi duelen la garganta el medico le pone una gorita negra', 560, 'MHFU', 6, 'No image.', '2017-05-22 11:54:05'),
-(13, 'Ben Franklin', 'Best USA president in the century Lorem Ipsum Dolor', 2240, 'MHFU', 2, 'No image.', '2017-05-22 12:30:48'),
-(14, 'Acer Laptop', 'Acer ana ana', 822, 'Acer', 0, 'No image.', '2017-05-23 11:26:46');
+INSERT INTO `products` (`itemID`, `itemName`, `itemDescription`, `itemPrice`, `itemBrand`, `userID`, `itemImage`, `dateAdded`, `stock`, `reserved`) VALUES
+(7, 'Buster Sword', 'a HUGE SWORD ;)))', 822, 'MHFU', 2, 'https://vignette2.wikia.nocookie.net/monsterhunter/images/e/ec/1stGen_and_2ndGen-Great_Sword_Render_009.png/revision/latest/scale-to-width-down/66?cb=20120512064435', '2017-05-21 05:46:00', 8, 0),
+(8, 'White Serpent Blade', 'Beautiful Great Sword made from white Giaprey scales. Lined with gold fangs. Beautiful Great Sword made from white Giaprey scales. Lined with gold fangs.', 384, 'MHFU', 2, 'https://vignette3.wikia.nocookie.net/monsterhunter/images/c/cf/2ndGen-Great_Sword_Render_014.png/revision/latest/scale-to-width-down/64?cb=20120512092913', '0000-00-00 00:00:00', 4, 0),
+(9, 'Ravager Blade', 'Iron Great Sword with a vicious serrated edge. Can be further improved.', 576, 'MHFU', 2, 'https://vignette3.wikia.nocookie.net/monsterhunter/images/b/b6/1stGen_and_2ndGen-Great_Sword_Render_005.png/revision/latest/scale-to-width-down/80?cb=20120512064402', '0000-00-00 00:00:00', 5, 0),
+(10, 'Khezu Shock Sword', 'Made of Khezu. Wrapped in attribute material with an electrified blade.', 624, 'MHFU', 2, 'https://vignette4.wikia.nocookie.net/monsterhunter/images/1/1b/1stGen_and_2ndGen-Great_Sword_Render_036.png/revision/latest/scale-to-width-down/60?cb=20120512093241', '2017-05-21 07:02:46', 6, 0),
+(11, 'Decider', 'Heavy Great Sword of high quality steel. Symbol of ancient judges authority.', 1104, 'MHFU', 2, 'https://vignette2.wikia.nocookie.net/monsterhunter/images/7/7e/2ndGen-Great_Sword_Render_001.png/revision/latest/scale-to-width-down/90?cb=20120512011119', '2017-05-21 14:10:34', 1, 0);
 
 -- --------------------------------------------------------
 
