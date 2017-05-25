@@ -13,30 +13,57 @@
 			{
 				$id = $_SESSION['idList'];
 				$qty = $_SESSION['quantityList'];
+				
 				if(count($id) > 0)
 				{
 					  echo "<table border=1>
-					  <tr> <th> ID </th> <th> Quantity </th> </tr>";
-				//for ID
-				for($i = 0; $i < count($id); $i++)
-				{
-					echo "<tr>
-							<td>".$_SESSION['idList'][$i]."</td> <td>".$_SESSION['quantityList'][$i]."</td><td>
-							<a href='shopping-cart.php?id=".$i++."?qty=".$i++."'><button id='remove'> x </button></a>
-						  </tr>
-						  ";
-				}
+					  <tr> <th> Name </th> <th> Price </th><th> Quantity </th><th> Total</th> </tr>";
+					  
+				$total=0;
+					for($i = 0; $i < count($id); $i++)
+					{
+						$temp = $_SESSION['quantityList'][$i];
+						$query = "SELECT * FROM  `products` WHERE itemID = ".$_SESSION['idList'][$i];
+						$result = $conn -> query($query);
+						if (!mysqli_query($conn,$query))
+						{
+							echo("Error description: " . mysqli_error($conn));
+						}
+						if($row = $result -> fetch_assoc())
+						{
+							
+							if(count($row) > 0)
+							{
+							  $tots = ($row['itemPrice']*$temp);
+							  $welp = $i+1;
+							  echo "<tr>
+								<td>".$row['itemName']."</td> <td> ".$row['itemPrice']."</td> <td>".$_SESSION['quantityList'][$i]."</td><td>$tots</td><td>
+								<a href='shopping-cart.php?id='".$welp."'?qty='".$welp."'><button id='remove'> x </button></a>
+							  </tr>
+							  ";
+							  $total += $tots;
+							}else
+							{
+								echo "Item does not exist! :O ";
+							}
+						}else
+						{
+							echo "MAY MALI BAI";
+						}
+					}
+				echo "<tr><td colspan=3>TOTAL: </td> <td>$total </td> </tr>";
 				echo "</table>";
 				}else
 				{
-					echo "You haven't ordered anything yet!";
+					echo "Shopping cart is empty!";
 				}
 			
 			}else
 			{
-				echo "You haven't ordered anything yet!";
+				echo "Shopping cart is empty!";
 			}
 		?>
+	
 	</div>
 	<div id="response">
 		<span id="text"> </span>
@@ -52,10 +79,10 @@
 					array_splice($_SESSION['idList'], ($_GET['id']-1),1);
 					array_splice($_SESSION['quantityList'], ($_GET['qty']-1),1);
 					echo "document.getElementById('text').innerHTML = 'deleting...';";
-					header("Refresh: 5; url=shopping-cart.php");
+					header("Refresh: 0.5; url=shopping-cart.php");
 				}else
 				{
-					echo "document.getElementById('text').innerHTML = 'Couldnt remove item!'";
+					echo "document.getElementById('text').innerHTML = 'Deleting...'";
 				}
 				//
 				
