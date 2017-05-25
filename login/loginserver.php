@@ -18,22 +18,22 @@ if(isset($_POST['submit']))
 			if($count1 > 0)
 			{
 				setcookie('username','$user',time()+86400,'/');
-				header("Refresh:0;url=/IS310A/tempHome/home.php");
+				header("Refresh:0;url=/IS310A/home%20page%204bytes/hp.php");
 			}
 			 else if(empty($_POST['user']) || empty($_POST['password']))
 			{
 				echo "Your username or password is empty";
-				header("Refresh;1:url = newLogin.php");
+				header("Refresh:1;url = newLogin.php");
 			}
 			else if($count1 == 0)
 			{
 				echo " The Username is incorrect";
-				header("Refresh;1:url=newLogin.php");
+				header("Refresh:1;url=newLogin.php");
 			}
 			else if($count2 == 0)
 			{
 				echo "The Password is incorrect";
-				header("Refresh;1:url=newLogin.php");
+				header("Refresh:1;url=newLogin.php");
 			}
 		}
 }

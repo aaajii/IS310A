@@ -1,17 +1,17 @@
 <?php
-	if(isset($_POST['idList']) &&
-	   isset($_POST['nameList']) &&
-	   isset($_POST['totalList']) &&
-	   isset($_POST['quantityList']) &&
+	if(isset($_POST['id']) &&
+	   isset($_POST['name']) &&
+	   isset($_POST['totals']) &&
+	   isset($_POST['qty'])
 	)
 	{
 		session_start();
 
 		
-		$_POST['idList']
-		$_POST['nameList']
-		$_POST['totalList']
-		$_POST['quantityList']
+		$id = $_POST['id'];
+		$name = $_POST['name'];
+		$total = $_POST['totals'];
+		$quantity = $_POST['qty'];
 		
 		if (empty($_SESSION['idList']) && 
 			empty($_SESSION['nameList']) &&
@@ -24,10 +24,10 @@
 			$_SESSION['totalList'] = array();
 			$_SESSION['quantityList'] = array();
 		}
-		array_push($_SESSION['idList'], $row['itemID']);
-		array_push($_SESSION['nameList'], $row['itemName']);
-		array_push($_SESSION['totalList'], $_GET['price']);
-		array_push($_SESSION['quantityList'], $_GET['qty']);
+		array_push($_SESSION['idList'], $id);
+		array_push($_SESSION['nameList'], $name);
+		array_push($_SESSION['totalList'], $total);
+		array_push($_SESSION['quantityList'], $quantity);
 		echo "Item added to cart! <a href=''> Click here to view your cart! </a>";
 	}
 ?>

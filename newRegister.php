@@ -101,6 +101,10 @@
 			else
 			{
 					// VALIDATE USERNAME
+					<?php 
+					include 'config.php';
+					
+					?>
 			if(username.value.toString().length < 8)
 			{
 					name_error.textContent = "Username is required and should be at least 8 characters and above";

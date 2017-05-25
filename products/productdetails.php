@@ -123,9 +123,8 @@
 		$.ajax({
 						type: 'POST',
 						url: 'add-to-cart.php',
-						data: { id: name, name: desc,
-								: prce, brand: brnd,
-								image: imge},
+						data: { id: <?php echo $_GET['id'] ?>, name: $(".image-header h1").text(),
+								totals: total, qty: howMany},
 						success: function(response){
 							$('#feedback').html(response);
 						}
