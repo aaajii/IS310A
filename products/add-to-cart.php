@@ -1,4 +1,8 @@
 <?php
+	if (isset($_COOKIE['username']))
+	{
+?>
+<?php
 	if(isset($_POST['id']) &&
 	   isset($_POST['qty'])
 	)
@@ -45,4 +49,8 @@
 			echo "whoops";
 		}
 	}
+?>
+
+<?php 
+	}else{header("Location: /IS310A/login/newLogin.php");}
 ?>

@@ -71,7 +71,7 @@ if(!isset($_COOKIE['username']))
 <?php
 include ("config.php");
 include ('loginserver.php');
-}else{header("Refresh:0;url=/IS310A/home%20page%204bytes/hp.php");}
+}//else{header("Refresh:0;url=/IS310A/home%20page%204bytes/hp.php");}
 ?>
 </body>
 </html>

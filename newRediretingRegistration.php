@@ -1,3 +1,8 @@
+<?php
+	if (isset($_COOKIE['username']))
+	{
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,6 +15,7 @@ Redirecting in 3 seconds!
 </body>
 </html>
 <?php 
+	}else{header("Location: newLogin.php");}
 	include ('config.php');
 	if (isset($_POST["username"]) && isset($_POST["firstname"]) && isset($_POST["contactnumber"]) && isset($_POST["lastname"]) && isset($_POST["password"])) {
 		$username = $_POST['username'];

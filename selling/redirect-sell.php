@@ -1,4 +1,9 @@
 <?php
+	if (isset($_COOKIE['username']))
+	{
+?>
+
+<?php
 	if( isset($_POST['name']) &&
 		isset($_POST['dsc']) &&
 		isset($_POST['price']) &&
@@ -46,11 +51,10 @@
 	}
 	else 
 	{
-		echo $_POST['name'];
-		echo $_POST['dsc']; 
-		echo $_POST['price'];
-		echo $_POST['brand'];
-		echo $_POST['image'];
-		//header("Location: sellform.html");
+		header("Location: sellform.php");
 	}
 ?>
+<?php 
+	}else{header("Location: /IS310A/login/newLogin.php");}
+?>
+

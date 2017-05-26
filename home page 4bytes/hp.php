@@ -1,3 +1,8 @@
+<?php
+	if (isset($_COOKIE['username']))
+	{
+?>
+
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -528,3 +533,7 @@ li a:hover {
 	</script>
 </body>
 </html>
+
+<?php 
+	}else{header("Location: /IS310A/login/newLogin.php");}
+?>

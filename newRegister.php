@@ -1,3 +1,8 @@
+<?php
+	if (isset($_COOKIE['username']))
+	{
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -220,3 +225,6 @@
 		}
 	}
 </script>
+<?php 
+	}else{header("Location: /IS310A/login/newLogin.php");}
+?>
