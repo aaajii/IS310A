@@ -1,24 +1,13 @@
 <!DOCTYPE html>
+
 	<html>
 		<head>
 			
 			<title>Sell</title>
+			<link rel="stylesheet" type="text/css" href="sell-style.css"> 
 			<style>
 			    
-body 
-{
-	color: black;
-}	
 
-div 
-{
-	border-radius: 10px;
-    float: left;
-    margin-left: 90px;
-	margin-top: 50px;
-	border-style: solid;
-	border-width: 3px;
-}
 table 
 {
 	border-collapse: collapse;
@@ -27,7 +16,7 @@ table
     
         </style>
 		</head>
-		<body background = "asd.jpg">
+		<body>
 	
           <div id="datainput" align="center">
             <table height="400px">
@@ -61,14 +50,39 @@ table
         <br>
         </div>
 		
-		<div id="datainput" align="center">
+		<div id="dataoutput" align="center">
 		
 			<?php
 				include 'config.php';
-	
+				if(isset($_GET['id']))
+				{
+					include 'config.php';
+					$id = $_GET['id'];
+					$query = "DELETE FROM products WHERE itemID = $id;";
+					if (!mysqli_query($conn,$query))
+					{
+						echo("Error description: " . mysqli_error($conn));
+					}
+					if($conn -> query($query))
+					{
+						
+					}else {echo "there seems to be a mistake";};
+				}
+				$query = "SELECT userID FROM users WHERE username = '".$_COOKIE['username']."';";
+				
+				if (!mysqli_query($conn,$query))
+				{
+				  echo("Error description: " . mysqli_error($conn));
+				}
+				
+				$execute = $conn -> query($query);
+				
+				$id = $execute -> fetch_assoc();
+				
 				$test = " SELECT * 
-						  FROM  `products`";
+						  FROM  `products` WHERE userID = ".$id['userID']."";
 				//Let me check if there are errors ahehe
+				
 				if (!mysqli_query($conn,$test))
 				{
 				  echo("Error description: " . mysqli_error($conn));
@@ -78,32 +92,39 @@ table
 					
 				while($result = $execute -> fetch_assoc())
 				{
-					$description = $result['itemDescription'];
-					$newDesc = "";
-					if (strlen($description) > 50)
+					if(count($result) > 0)
 					{
-						for ($i = 0; $i < 50; $i++)
+						$description = $result['itemDescription'];
+						$newDesc = "";
+						if (strlen($description) > 50)
 						{
-							$newDesc .= $description[$i];
+							for ($i = 0; $i < 50; $i++)
+							{
+								$newDesc .= $description[$i];
+							}
+							$newDesc .= "...";
+						}else
+						{
+							$newDesc = $description;
 						}
-						$newDesc .= "...";
+						
+						echo " <div class='responsive'>
+								  <div class='product'>
+								  <button> Edit </button> <a href='sellform.php?id=".$result['itemID']."'<button> Remove </button></a>
+									<center>
+									  <img src='".$result['itemImage']."' alt='1024px-No_image_available.svg.png' style='width:30%;height:auto;'>
+									<p><span><b> Price: </b>".$result['itemPrice']." </span></p></center>
+									
+									<div class='desc'><b>".$result['itemName']."</b> <br/>
+													  ".$newDesc."
+									</div>
+								  </div>
+								</div>";
 					}else
 					{
-						$newDesc = $description;
+						echo "You are currently not selling anything";
+						break;
 					}
-					
-					echo " <div class='responsive'>
-							  <div class='product'>
-								<center><a href='productdetails.php?id=".$result['itemID']."'>
-								  <img src='".$result['itemImage']."' alt='1024px-No_image_available.svg.png' style='width:30%;height:auto;'>
-								</a>
-								<p><span><b> Price: </b>".$result['itemPrice']." </span></p></center>
-								
-								<div class='desc'><b>".$result['itemName']."</b> <br/>
-												  ".$newDesc."
-								</div>
-							  </div>
-							</div>";
 				}
 			?>
 		
@@ -174,6 +195,7 @@ table
 							$('#feedback').html(response);
 						}
 					});
+					
 		}
 	
 	});

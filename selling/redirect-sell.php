@@ -40,7 +40,6 @@
 		if ($execute)
 		{
 			echo "<text> Thank you for selling your item here! <br/>";
-			header ("Refresh: 2; url: home.php");
 			
 		}else{echo("Dude, there r bugs: ".mysqli_error($conn));}
 		mysqli_close($conn);

@@ -17,7 +17,7 @@ if(isset($_POST['submit']))
 			$count1 = count($verify1);
 			if($count1 > 0)
 			{
-				setcookie('username','$user',time()+86400,'/');
+				setcookie('username',$user,time()+86400,'/');
 				header("Refresh:0;url=/IS310A/home%20page%204bytes/hp.php");
 			}
 			 else if(empty($_POST['user']) || empty($_POST['password']))

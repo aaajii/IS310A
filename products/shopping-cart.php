@@ -56,11 +56,13 @@
 				}else
 				{
 					echo "Shopping cart is empty!";
+					session_destroy();
 				}
 			
 			}else
 			{
 				echo "Shopping cart is empty!";
+				session_destroy();
 			}
 		?>
 	
@@ -101,7 +103,7 @@
 						array_splice($_SESSION['idList'],$num,1);
 						array_splice($_SESSION['quantityList'],$num,1);
 						echo "document.getElementById('text').innerHTML = 'deleting...';";
-						header("Refresh: 5; url=shopping-cart.php");
+						header("Refresh: 0.5; url=shopping-cart.php");
 					}
 					else
 					{

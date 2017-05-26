@@ -312,7 +312,7 @@ li a:hover {
 		
 		<div class="btn-group">
 		  <button class="button" onclick="newDoc()"><a href="/IS310A/login/newLogin.php">Log out</a></button>
-		  <button class="button"><a href="/IS310A/selling/sellform.html">Sell</a></button>
+		  <button class="button"><a href="/IS310A/selling/sellform.php">Sell</a></button>
           <button class="button"><a href="/IS310A/products/products.php">Buy</a></button>         
 		  <button class="button"><a href="/IS310A/home%20page%204bytes/hp.html">Home</a></button>
           
