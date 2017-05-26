@@ -1,6 +1,4 @@
 <?php
-	if (isset($_COOKIE['username']))
-	{
 if(isset($_POST['submit']))
 {
 		if(isset($_POST['user']) && isset($_POST['password']))
@@ -39,6 +37,4 @@ if(isset($_POST['submit']))
 			}
 		}
 }
-	
-	}else{header("Location: /IS310A/login/newLogin.php");}
 ?>

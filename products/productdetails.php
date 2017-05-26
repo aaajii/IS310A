@@ -98,6 +98,7 @@
 		{
 		echo $_SERVER['id'];
 			echo "Well, that's embarassing... the item is not available for some reason, please go back to the page";
+			header("Location: products.php");
 		}
 	
 	

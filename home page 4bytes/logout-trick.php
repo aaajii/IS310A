@@ -5,7 +5,7 @@
 	}
 	else
 	{
-		setcookie('username','wew',time()-900000,'/');
+		setcookie('username','wew',time()-99999,'/');
 		header("Location: /IS310A/login/newLogin.php");
 	}
 ?>

@@ -25,36 +25,40 @@
 	}
 	
 	$execute = $conn -> query($test);
-		
-	while($result = $execute -> fetch_assoc())
-	{
-		$description = $result['itemDescription'];
-		$newDesc = "";
-		if (strlen($description) > 50)
+	if($execute -> fetch_assoc())
+	{		
+		while($result = $execute -> fetch_assoc())
 		{
-			for ($i = 0; $i < 50; $i++)
+			
+			$description = $result['itemDescription'];
+			$newDesc = "";
+			if (strlen($description) > 50)
 			{
-				$newDesc .= $description[$i];
+				for ($i = 0; $i < 50; $i++)
+				{
+					$newDesc .= $description[$i];
+				}
+				$newDesc .= "...";
+			}else
+			{
+				$newDesc = $description;
 			}
-			$newDesc .= "...";
-		}else
-		{
-			$newDesc = $description;
+			
+			echo " <div class='responsive'>
+					  <div class='product'>
+						<center><a href='productdetails.php?id=".$result['itemID']."'>
+						  <img src='".$result['itemImage']."' alt='1024px-No_image_available.svg.png' style='width:30%;height:auto;'>
+						</a>
+						<p><span><b> Price: </b>".$result['itemPrice']." </span></p></center>
+						
+						<div class='desc'><b>".$result['itemName']."</b> <br/>
+										  ".$newDesc."
+						</div>
+					  </div>
+					</div>";
 		}
-		
-		echo " <div class='responsive'>
-				  <div class='product'>
-					<center><a href='productdetails.php?id=".$result['itemID']."'>
-					  <img src='".$result['itemImage']."' alt='1024px-No_image_available.svg.png' style='width:30%;height:auto;'>
-					</a>
-					<p><span><b> Price: </b>".$result['itemPrice']." </span></p></center>
-					
-					<div class='desc'><b>".$result['itemName']."</b> <br/>
-									  ".$newDesc."
-					</div>
-				  </div>
-				</div>";
-	}
+	}else{echo "Looks like nobody is selling, redirecting you now to the home page";
+	header("Refresh: 3; url= /IS310A/home%20page%204bytes/hp.php");}
 ?>
 </body>
 </html>
