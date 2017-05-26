@@ -311,10 +311,10 @@ li a:hover {
 		<h1>4Bytes<span class="color"></span></h1>
 		
 		<div class="btn-group">
-		  <button class="button"><a href="newLogin.php">Log out</a></button>
-		  <button class="button"><a href="http://localhost:8080/IS310A/selling/sellform.html">Sell</a></button>
-          <button class="button"><a href="#">Buy</a></button>         
-		  <button class="button"><a href="http://localhost:8080/IS310A/home%20page%204bytes/hp.html">Home</a></button>
+		  <button class="button" onclick="newDoc()"><a href="/IS310A/login/newLogin.php">Log out</a></button>
+		  <button class="button"><a href="/IS310A/selling/sellform.php">Sell</a></button>
+          <button class="button"><a href="/IS310A/products/products.php">Buy</a></button>         
+		  <button class="button"><a href="/IS310A/home%20page%204bytes/hp.html">Home</a></button>
           
          
           
@@ -503,6 +503,7 @@ li a:hover {
 		<div id="footer-info">
 		  <p>Copyright 2017 4Bytes. All rights reserved.</p>
 		  <p><a href="#">Terms of Service</a> I <a href="#">Privacy</a></p>
+		  <p><a href="#">Terms of Service</a> I <a href="#">Privacy</a></p>
 		</div>
 		<div id="footer-links">
 			
@@ -519,6 +520,11 @@ li a:hover {
 		<div class="clear"></div>
 	  </div>
 	</footer>
-    
+	<script src="/IS310A/extras/bootstrap-3.3.7-dist/jquery.min.js"></script>
+    <script> 
+		function newDoc() {
+			window.location.assign("logout-trick.php?id=1")
+		}
+	</script>
 </body>
 </html>

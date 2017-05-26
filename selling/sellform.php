@@ -1,122 +1,24 @@
 <!DOCTYPE html>
+
 	<html>
 		<head>
 			
 			<title>Sell</title>
+			<link rel="stylesheet" type="text/css" href="sell-style.css"> 
 			<style>
 			    
-                 h1 {
-	       font-family: 'Crete Round', serif;
-	       font-weight: bold;
-	       color: blue;
-	       font-size: 65px;
-	      
-              }
-        .wrapper {
-                	margin: 0 auto;
-                	padding: 0 10px;
-                	width: 940px;
-               }
-         header {
-	              height: 100px;
-				  background-color: gray;
-				  opacity: 0.75;
-	            }
 
-         header h1 {
-	                 float: left;
-	                 margin-top: 1px;
-	                 margin-left: 50px;
-                   }
-		
-          header nav {
-	               float: right;
-                     }
-
-      
-		 .btn-group .button {
-    background-color: white;
-    border: none;
-    color: blue;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 17px;
-    cursor: pointer;
-    float: right;
-	margin-top: 40px;
+table 
+{
+	border-collapse: collapse;
 }
-.btn-group .buttonact {
-    background-color: black;
-    border: none;
-    color: blue;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 17px;
-    cursor: pointer;
-    float: right;
-	margin-top: 40px;
-}
-
-.btn-group .button:hover {
-    background-color: black;
-	
-}
-.shopcart{height:60px;width:60px;}
-.btn-group .button2{
-	float: center;
-	border-radius: 50%;
-	margin-top:15px;
-	margin-left:90px;
-	}
-                div.sellform {
-				     border-radius: 5px;
-                     float: left;
-                     margin-left: -250px;
-					 margin-top: 50px;
-					 border-style: solid;
-					 border-width: 1px;
-					 
-                   }
-				div.pic {
-				     border-radius: 5px;
-                     float: left;
-                     margin-right: 100px;
-					 margin-top: 50px;
-					 border-style: solid;
-					 border-width: 1px;
-                   }
-			    table {
-                       border-collapse: collapse;
-                       
-                      }
 			   
     
         </style>
-		<link rel="shortcut icon" href="bytes-icon.ico" />
 		</head>
 		<body>
-		
-		 <header>
-	  <div class="wrapper">
-		<h1>4Bytes<span class="color"></span></h1>
-		
-		<div class="btn-group">
-		  <button class="button"><a href="newLogin.php">Log out</a></button>
-		  <button class="buttonact"><a href="http://localhost:8080/IS310A/selling/sellform.html">Sell</a></button>
-          <button class="button"><a href="#">Buy</a></button>         
-		  <button class="button"><a href="http://localhost:8080/IS310A/home%20page%204bytes/hp.html">Home</a></button>
-          <button class="button2"><a href=""><img class="shopcart " src="shop-cart.png" ></a></button>
-         
-          
-        </div>
-	  </div>
-	</header>
 	
-          <div class="sellform" align="center">
+          <div id="datainput" align="center">
             <table height="400px">
 			<br>
 			
@@ -133,13 +35,8 @@
               <td><input type="text" id="price"></td>
             </tr>
 			<tr>
-<<<<<<< HEAD
-              <th>Contact no.:</th>
-              <td><input type="text" id="contact" value=""></td>
-=======
               <th>Brand:</th>
               <td><input type="text" id="brand" value=""></td>
->>>>>>> Test-new-updates
             </tr>
 			
 		    <tr>
@@ -148,31 +45,44 @@
             </tr>
         </table>
 
-        <button id="button" name = "button"> Sell!</button>
+        <button id="button" name = "button">Sell!</button>
         <br>
         <br>
         </div>
 		
-<<<<<<< HEAD
-		<div class="pic" align="center">
-		  <br>
-		  <br>
-                -- insert pic here -- <br>
-				<img src="blank.jpg">
-		   
-		  <br>
-		  <br>
-        </div>
-		
-=======
-		<div id="datainput" align="center">
+		<div id="dataoutput" align="center">
 		
 			<?php
 				include 'config.php';
-	
+				if(isset($_GET['id']))
+				{
+					include 'config.php';
+					$id = $_GET['id'];
+					$query = "DELETE FROM products WHERE itemID = $id;";
+					if (!mysqli_query($conn,$query))
+					{
+						echo("Error description: " . mysqli_error($conn));
+					}
+					if($conn -> query($query))
+					{
+						
+					}else {echo "there seems to be a mistake";};
+				}
+				$query = "SELECT userID FROM users WHERE username = '".$_COOKIE['username']."';";
+				
+				if (!mysqli_query($conn,$query))
+				{
+				  echo("Error description: " . mysqli_error($conn));
+				}
+				
+				$execute = $conn -> query($query);
+				
+				$id = $execute -> fetch_assoc();
+				
 				$test = " SELECT * 
-						  FROM  `products`";
+						  FROM  `products` WHERE userID = ".$id['userID']."";
 				//Let me check if there are errors ahehe
+				
 				if (!mysqli_query($conn,$test))
 				{
 				  echo("Error description: " . mysqli_error($conn));
@@ -182,32 +92,39 @@
 					
 				while($result = $execute -> fetch_assoc())
 				{
-					$description = $result['itemDescription'];
-					$newDesc = "";
-					if (strlen($description) > 50)
+					if(count($result) > 0)
 					{
-						for ($i = 0; $i < 50; $i++)
+						$description = $result['itemDescription'];
+						$newDesc = "";
+						if (strlen($description) > 50)
 						{
-							$newDesc .= $description[$i];
+							for ($i = 0; $i < 50; $i++)
+							{
+								$newDesc .= $description[$i];
+							}
+							$newDesc .= "...";
+						}else
+						{
+							$newDesc = $description;
 						}
-						$newDesc .= "...";
+						
+						echo " <div class='responsive'>
+								  <div class='product'>
+								  <button> Edit </button> <a href='sellform.php?id=".$result['itemID']."'<button> Remove </button></a>
+									<center>
+									  <img src='".$result['itemImage']."' alt='1024px-No_image_available.svg.png' style='width:30%;height:auto;'>
+									<p><span><b> Price: </b>".$result['itemPrice']." </span></p></center>
+									
+									<div class='desc'><b>".$result['itemName']."</b> <br/>
+													  ".$newDesc."
+									</div>
+								  </div>
+								</div>";
 					}else
 					{
-						$newDesc = $description;
+						echo "You are currently not selling anything";
+						break;
 					}
-					
-					echo " <div class='responsive'>
-							  <div class='product'>
-								<center><a href='productdetails.php?id=".$result['itemID']."'>
-								  <img src='".$result['itemImage']."' alt='1024px-No_image_available.svg.png' style='width:30%;height:auto;'>
-								</a>
-								<p><span><b> Price: </b>".$result['itemPrice']." </span></p></center>
-								
-								<div class='desc'><b>".$result['itemName']."</b> <br/>
-												  ".$newDesc."
-								</div>
-							  </div>
-							</div>";
 				}
 			?>
 		
@@ -241,7 +158,6 @@
 			<img src = "blue.jpg" width = "22%"/> <!-- picture niya and size niya-->
 			<img src = "light.jpg" width = "22%"/></center></marquee>
 		
->>>>>>> Test-new-updates
 		
 
 
@@ -279,11 +195,11 @@
 							$('#feedback').html(response);
 						}
 					});
+					
 		}
 	
 	});
 </script>
-
 
 </body>
 </html>
