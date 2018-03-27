@@ -1,2 +1,2 @@
 # IS310A
-Web Development. Shopping cart power! ahoo!
+A shopping cart application for Sir Adrian Ablazo. Developed with WAMP
